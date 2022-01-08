@@ -9,11 +9,11 @@ import XCTest
 
 struct Launch {
     let name: String
-    let id: UUID
+    let id: String
     let details: String
     let date: Date
     let imageUrl: URL?
-    let rocketId: UUID
+    let rocketId: String
     let success: Bool?
     let upcoming: Bool
 }
@@ -88,11 +88,11 @@ class LaunchTests: XCTestCase {
     
     // MARK: - Helper
     private func makeUniqueNonFailureLaunch(_ date: Date = Date(), success: Bool? = true, upcoming: Bool = false) -> Launch {
-        Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: success, upcoming: upcoming)
+        Launch(name: "Any Name", id: UUID().uuidString, details: "Some details", date: date, imageUrl: nil, rocketId: UUID().uuidString, success: success, upcoming: upcoming)
     }
     
     private func makeUniqueFailureLaunch(_ date: Date = Date(), success: Bool = false, upcoming: Bool = false) -> Launch {
-        Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: success, upcoming: upcoming)
+        Launch(name: "Any Name", id: UUID().uuidString, details: "Some details", date: date, imageUrl: nil, rocketId: UUID().uuidString, success: success, upcoming: upcoming)
     }
     
     private var calendar: Calendar{
