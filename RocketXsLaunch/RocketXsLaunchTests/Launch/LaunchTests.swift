@@ -7,5 +7,40 @@
 
 import XCTest
 
-class LaunchTests: XCTestCase {
+struct Launch {
+    let name: String
+    let id: UUID
+    let details: String
+    let date: Date
+    let imageUrl: URL?
+    let rocketId: UUID
+    let success: Bool
 }
+
+extension Array where Element == Launch{
+    func successful() -> [Launch]{
+        self.filter({$0.success})
+    }
+}
+
+class LaunchTests: XCTestCase {
+    func test_filterBySuccess_returnsSeccessfullLaunch() {
+        let success1 = makeUniqueSuccessfulLaunch()
+        let success2 = makeUniqueSuccessfulLaunch()
+        let unsuccess1 = makeUniqueUnSuccessfulLaunch()
+        let unsuccess2 = makeUniqueUnSuccessfulLaunch()
+        
+        XCTAssertEqual([success1, unsuccess1, success2, unsuccess2].successful(), [success1, success2])
+    }
+    
+    // MARK: - Helper
+    private func makeUniqueSuccessfulLaunch() -> Launch {
+        Launch(name: "Any Name", id: UUID(), details: "Some details", date: Date(), imageUrl: nil, rocketId: UUID(), success: true)
+    }
+    
+    private func makeUniqueUnSuccessfulLaunch() -> Launch {
+        Launch(name: "Any Name", id: UUID(), details: "Some details", date: Date(), imageUrl: nil, rocketId: UUID(), success: false)
+    }
+}
+
+extension Launch: Equatable{}
