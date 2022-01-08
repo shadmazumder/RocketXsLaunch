@@ -23,8 +23,7 @@ extension Array where Element == Launch{
     }
     
     func filterByYear(_ year: DateComponents) -> [Launch] {
-        let calendar = Calendar(identifier: .iso8601)
-        return successful().filter({ calendar.dateComponents([.year], from: $0.date) == year })
+        successful().filter({ Calendar.current.dateComponents([.year], from: $0.date) == year })
     }
 }
 
