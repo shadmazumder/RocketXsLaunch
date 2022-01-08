@@ -34,12 +34,12 @@ class LaunchTests: XCTestCase {
     }
     
     // MARK: - Helper
-    private func makeUniqueSuccessfulLaunch() -> Launch {
-        Launch(name: "Any Name", id: UUID(), details: "Some details", date: Date(), imageUrl: nil, rocketId: UUID(), success: true)
+    private func makeUniqueSuccessfulLaunch(_ date: Date = Date()) -> Launch {
+        Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: true)
     }
     
-    private func makeUniqueUnSuccessfulLaunch() -> Launch {
-        Launch(name: "Any Name", id: UUID(), details: "Some details", date: Date(), imageUrl: nil, rocketId: UUID(), success: false)
+    private func makeUniqueUnSuccessfulLaunch(date: Date = Date()) -> Launch {
+        Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: false)
     }
 }
 
