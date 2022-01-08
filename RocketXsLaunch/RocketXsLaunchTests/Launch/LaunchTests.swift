@@ -65,12 +65,12 @@ class LaunchTests: XCTestCase {
     }
     
     // MARK: - Helper
-    private func makeUniqueNonFailureLaunch(_ date: Date = Date()) -> Launch {
-        Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: true, upcoming: false)
+    private func makeUniqueNonFailureLaunch(_ date: Date = Date(), success: Bool = true, upcoming: Bool = false) -> Launch {
+        Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: success, upcoming: upcoming)
     }
     
-    private func makeUniqueFailureLaunch(_ date: Date = Date()) -> Launch {
-        Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: false, upcoming: false)
+    private func makeUniqueFailureLaunch(_ date: Date = Date(), success: Bool = false, upcoming: Bool = false) -> Launch {
+        Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: success, upcoming: upcoming)
     }
     
     private var calendar: Calendar{
