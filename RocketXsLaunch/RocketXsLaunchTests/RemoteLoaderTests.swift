@@ -30,7 +30,9 @@ final class RemotePostLoader{
         self.client = client
     }
     
-    public func load(completion: @escaping ((Result) -> Void)) {}
+    public func load(completion: @escaping ((Result) -> Void)) {
+        client.get(from: url) { _ in }
+    }
 }
 
 class RemoteLoaderTests: XCTestCase {
@@ -40,6 +42,15 @@ class RemoteLoaderTests: XCTestCase {
         XCTAssertTrue(client.message.isEmpty)
     }
     
+    func test_load_requestDataFromURL() {
+        let url = anyURL()
+        let (sut, client) = makeSUT(url)
+
+        sut.load { _ in }
+
+        XCTAssertEqual(client.requestedURL, [url])
+    }
+    
     // MARK: - Helper
     private func makeSUT(_ url: URL = URL(string: "some-url")!) -> (sut: RemotePostLoader, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
@@ -47,10 +58,19 @@ class RemoteLoaderTests: XCTestCase {
 
         return(sut, client)
     }
+    
+    private func anyURL() -> URL {
+        return URL(string: "any-url")!
+    }
 }
 
 private class HTTPClientSpy: HTTPClient {
     var message = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
+    var requestedURL: [URL] {
+        message.map({ $0.url })
+    }
     
-    func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {}
+    func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
+        message.append((url, completion))
+    }
 }
