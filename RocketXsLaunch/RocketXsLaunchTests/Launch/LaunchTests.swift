@@ -14,12 +14,20 @@ struct Launch {
     let date: Date
     let imageUrl: URL?
     let rocketId: UUID
-    let success: Bool
+    let success: Bool?
+    let upcoming: Bool
+}
+
+extension Launch{
+    var nonFailure: Bool{
+        guard let success = success else { return upcoming }
+        return success || upcoming
+    }
 }
 
 extension Array where Element == Launch{
     func successful() -> [Launch]{
-        filter({$0.success})
+        filter({$0.nonFailure})
     }
     
     func filterByYear(_ year: DateComponents) -> [Launch] {
@@ -58,11 +66,11 @@ class LaunchTests: XCTestCase {
     
     // MARK: - Helper
     private func makeUniqueSuccessfulLaunch(_ date: Date = Date()) -> Launch {
-        Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: true)
+        Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: true, upcoming: false)
     }
     
     private func makeUniqueUnSuccessfulLaunch(_ date: Date = Date()) -> Launch {
-        Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: false)
+        Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: false, upcoming: false)
     }
     
     private var calendar: Calendar{
