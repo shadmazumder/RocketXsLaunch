@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A18ACE732789B5600004A3FE /* RocketXsLaunch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18ACE6A2789B55F0004A3FE /* RocketXsLaunch.framework */; };
+		A18ACE842789BEFA0004A3FE /* LaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACE832789BEFA0004A3FE /* LaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		A18ACE6A2789B55F0004A3FE /* RocketXsLaunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RocketXsLaunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18ACE722789B5600004A3FE /* RocketXsLaunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketXsLaunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18ACE832789BEFA0004A3FE /* LaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +74,17 @@
 		A18ACE762789B5600004A3FE /* RocketXsLaunchTests */ = {
 			isa = PBXGroup;
 			children = (
+				A18ACE822789B70F0004A3FE /* Launch */,
 			);
 			path = RocketXsLaunchTests;
+			sourceTree = "<group>";
+		};
+		A18ACE822789B70F0004A3FE /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				A18ACE832789BEFA0004A3FE /* LaunchTests.swift */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 					};
 					A18ACE712789B5600004A3FE = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 					};
 				};
 			};
@@ -191,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A18ACE842789BEFA0004A3FE /* LaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +396,7 @@
 		A18ACE802789B5600004A3FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -396,6 +410,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = shadmazumder.RocketXsLaunchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -403,6 +418,7 @@
 		A18ACE812789B5600004A3FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
