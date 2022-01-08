@@ -37,10 +37,10 @@ extension Array where Element == Launch{
 
 class LaunchTests: XCTestCase {
     func test_filterBySuccess_returnsNonFailureLaunch() {
-        let nonFailure1 = makeUniqueSuccessfulLaunch()
-        let nonFailure2 = makeUniqueSuccessfulLaunch()
-        let failure1 = makeUniqueUnSuccessfulLaunch()
-        let failure2 = makeUniqueUnSuccessfulLaunch()
+        let nonFailure1 = makeUniqueNonFailureLaunch()
+        let nonFailure2 = makeUniqueNonFailureLaunch()
+        let failure1 = makeUniqueFailureLaunch()
+        let failure2 = makeUniqueFailureLaunch()
         
         XCTAssertEqual([nonFailure1, failure1, nonFailure2, failure2].nonFailure(), [nonFailure1, nonFailure2])
     }
@@ -53,11 +53,11 @@ class LaunchTests: XCTestCase {
         let lastThirdYear = calendar.dateComponents([.year], from: threeYearOldDate)
         let lastFifthYear = calendar.dateComponents([.year], from: fiveYearOldDate)
         
-        let threeYearOldNonFailure = makeUniqueSuccessfulLaunch(threeYearOldDate)
-        let threeYearOldFailure = makeUniqueUnSuccessfulLaunch(threeYearOldDate)
+        let threeYearOldNonFailure = makeUniqueNonFailureLaunch(threeYearOldDate)
+        let threeYearOldFailure = makeUniqueFailureLaunch(threeYearOldDate)
         
-        let fiveYearOldNonFailure = makeUniqueSuccessfulLaunch(fiveYearOldDate)
-        let fiveYearOldFailure = makeUniqueUnSuccessfulLaunch(fiveYearOldDate)
+        let fiveYearOldNonFailure = makeUniqueNonFailureLaunch(fiveYearOldDate)
+        let fiveYearOldFailure = makeUniqueFailureLaunch(fiveYearOldDate)
         
         XCTAssertEqual([threeYearOldNonFailure, threeYearOldFailure, fiveYearOldNonFailure, fiveYearOldFailure].filterByYear(lastThirdYear), [threeYearOldNonFailure])
         
@@ -65,11 +65,11 @@ class LaunchTests: XCTestCase {
     }
     
     // MARK: - Helper
-    private func makeUniqueSuccessfulLaunch(_ date: Date = Date()) -> Launch {
+    private func makeUniqueNonFailureLaunch(_ date: Date = Date()) -> Launch {
         Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: true, upcoming: false)
     }
     
-    private func makeUniqueUnSuccessfulLaunch(_ date: Date = Date()) -> Launch {
+    private func makeUniqueFailureLaunch(_ date: Date = Date()) -> Launch {
         Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: false, upcoming: false)
     }
     
