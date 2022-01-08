@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A18ACE732789B5600004A3FE /* RocketXsLaunch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18ACE6A2789B55F0004A3FE /* RocketXsLaunch.framework */; };
 		A18ACE842789BEFA0004A3FE /* LaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACE832789BEFA0004A3FE /* LaunchTests.swift */; };
+		A18ACE872789FFE40004A3FE /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACE862789FFE40004A3FE /* Launch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +26,7 @@
 		A18ACE6A2789B55F0004A3FE /* RocketXsLaunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RocketXsLaunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18ACE722789B5600004A3FE /* RocketXsLaunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketXsLaunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18ACE832789BEFA0004A3FE /* LaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTests.swift; sourceTree = "<group>"; };
+		A18ACE862789FFE40004A3FE /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		A18ACE6C2789B55F0004A3FE /* RocketXsLaunch */ = {
 			isa = PBXGroup;
 			children = (
+				A18ACE852789FFB20004A3FE /* Launch */,
 			);
 			path = RocketXsLaunch;
 			sourceTree = "<group>";
@@ -83,6 +86,14 @@
 			isa = PBXGroup;
 			children = (
 				A18ACE832789BEFA0004A3FE /* LaunchTests.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		A18ACE852789FFB20004A3FE /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				A18ACE862789FFE40004A3FE /* Launch.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -148,6 +159,7 @@
 				TargetAttributes = {
 					A18ACE692789B55F0004A3FE = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 					};
 					A18ACE712789B5600004A3FE = {
 						CreatedOnToolsVersion = 13.0;
@@ -196,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A18ACE872789FFE40004A3FE /* Launch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +355,7 @@
 		A18ACE7D2789B5600004A3FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -362,6 +376,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -369,6 +384,7 @@
 		A18ACE7E2789B5600004A3FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -396,6 +412,7 @@
 		A18ACE802789B5600004A3FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -418,6 +435,7 @@
 		A18ACE812789B5600004A3FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;

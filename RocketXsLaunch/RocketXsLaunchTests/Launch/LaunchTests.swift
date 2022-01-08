@@ -6,34 +6,7 @@
 //
 
 import XCTest
-
-struct Launch {
-    let name: String
-    let id: String
-    let details: String
-    let date: Date
-    let imageUrl: URL?
-    let rocketId: String
-    let success: Bool?
-    let upcoming: Bool
-}
-
-extension Launch{
-    var nonFailure: Bool{
-        guard let success = success else { return upcoming }
-        return success || upcoming
-    }
-}
-
-extension Array where Element == Launch{
-    func nonFailure() -> [Launch]{
-        filter({$0.nonFailure})
-    }
-    
-    func filterByYear(_ year: DateComponents) -> [Launch] {
-        nonFailure().filter({ Calendar.current.dateComponents([.year], from: $0.date) == year })
-    }
-}
+import RocketXsLaunch
 
 class LaunchTests: XCTestCase {
     func test_filterBySuccess_returnsNonFailureLaunch() {
@@ -104,4 +77,8 @@ class LaunchTests: XCTestCase {
     }
 }
 
-extension Launch: Equatable{}
+extension Launch: Equatable{
+    public static func == (lhs: Launch, rhs: Launch) -> Bool {
+        lhs.id == rhs.id
+    }
+}
