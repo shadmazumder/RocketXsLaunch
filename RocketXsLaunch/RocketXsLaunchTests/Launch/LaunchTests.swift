@@ -72,6 +72,13 @@ class LaunchTests: XCTestCase {
         XCTAssertEqual([trueSuccessLaunch.nonFailure, flaseSuccessLaunch.nonFailure, nilSuccessLaunch.nonFailure], [true, true, true])
     }
     
+    func test_upcomingFalseReturns_SuccessValueOnNonFailure() {
+        let trueSuccessLaunch = makeUniqueNonFailureLaunch(success: true, upcoming: false)
+        let flaseSuccessLaunch = makeUniqueNonFailureLaunch(success: false, upcoming: false)
+        
+        XCTAssertEqual([trueSuccessLaunch.nonFailure, flaseSuccessLaunch.nonFailure], [true, false])
+    }
+    
     // MARK: - Helper
     private func makeUniqueNonFailureLaunch(_ date: Date = Date(), success: Bool? = true, upcoming: Bool = false) -> Launch {
         Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: success, upcoming: upcoming)
