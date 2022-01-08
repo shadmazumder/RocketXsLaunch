@@ -31,7 +31,9 @@ final class RemotePostLoader{
     }
     
     public func load(completion: @escaping ((Result) -> Void)) {
-        client.get(from: url) { _ in }
+        client.get(from: url) { _ in
+            completion(.failure(.connectivity))
+        }
     }
 }
 
@@ -61,6 +63,15 @@ class RemoteLoaderTests: XCTestCase {
         XCTAssertEqual(client.requestedURL, [url, url])
     }
     
+    func test_load_deliversErrorOnClientError() {
+        let (sut, client) = makeSUT()
+        let anyError = NSError(domain: "Any doamin", code: 0)
+
+        expect(sut, tocompleteWith: .failure(RemotePostLoader.Error.connectivity)) {
+            client.completeWithError(anyError)
+        }
+    }
+    
     // MARK: - Helper
     private func makeSUT(_ url: URL = URL(string: "some-url")!) -> (sut: RemotePostLoader, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
@@ -72,6 +83,25 @@ class RemoteLoaderTests: XCTestCase {
     private func anyURL() -> URL {
         return URL(string: "any-url")!
     }
+    
+    private func expect(_ sut: RemotePostLoader, tocompleteWith expectedResult: RemotePostLoader.Result, when action: ()-> Void, file: StaticString = #file, line: UInt = #line) {
+        let exp = expectation(description: "Waiting for the client")
+
+        sut.load { result in
+            switch (result, expectedResult) {
+            case let (.failure(receivedError), .failure(expectedError)):
+                XCTAssertEqual(receivedError.localizedDescription, expectedError.localizedDescription, file: file, line: line)
+
+            default:
+                XCTFail("Expected \(expectedResult) but got \(result)", file: file, line: line)
+            }
+            exp.fulfill()
+        }
+
+        action()
+
+        wait(for: [exp], timeout: 1.0)
+    }
 }
 
 private class HTTPClientSpy: HTTPClient {
@@ -82,5 +112,9 @@ private class HTTPClientSpy: HTTPClient {
     
     func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
         message.append((url, completion))
+    }
+    
+    func completeWithError(_ error: Error, index: Int = 0) {
+        message[index].completion(.failure(error))
     }
 }
