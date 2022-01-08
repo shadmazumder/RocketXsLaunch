@@ -31,8 +31,13 @@ final class RemotePostLoader{
     }
     
     public func load(completion: @escaping ((Result) -> Void)) {
-        client.get(from: url) { _ in
-            completion(.failure(.connectivity))
+        client.get(from: url) { result in
+            switch result {
+            case .success:
+                completion(.failure(.non200HTTPResponse))
+            default:
+                completion(.failure(.connectivity))
+            }
         }
     }
 }
@@ -70,6 +75,16 @@ class RemoteLoaderTests: XCTestCase {
         expect(sut, tocompleteWith: .failure(RemotePostLoader.Error.connectivity)) {
             client.completeWithError(anyError)
         }
+    }
+    
+    func test_load_deliversNon200ResponseErrorOnNon200HTTPResponseStatusCode() {
+        let (sut, client) = makeSUT()
+        let non200HTTPResponseStatusCode = [199, 201, 233, 401]
+
+        non200HTTPResponseStatusCode.enumerated().forEach({ index, statusCode in
+            expect(sut, tocompleteWith: .failure(RemotePostLoader.Error.non200HTTPResponse)) {
+                client.completeWith(Data(), statusCode: statusCode, index: index)
+        } })
     }
     
     // MARK: - Helper
@@ -112,6 +127,12 @@ private class HTTPClientSpy: HTTPClient {
     
     func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
         message.append((url, completion))
+    }
+    
+    func completeWith(_ data: Data, statusCode: Int = 200, index: Int = 0) {
+        let response = HTTPURLResponse(url: requestedURL[index], statusCode: statusCode, httpVersion: nil, headerFields: nil)!
+
+        message[index].completion(.success((data, response)))
     }
     
     func completeWithError(_ error: Error, index: Int = 0) {
