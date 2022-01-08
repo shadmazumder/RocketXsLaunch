@@ -26,26 +26,26 @@ extension Launch{
 }
 
 extension Array where Element == Launch{
-    func successful() -> [Launch]{
+    func nonFailure() -> [Launch]{
         filter({$0.nonFailure})
     }
     
     func filterByYear(_ year: DateComponents) -> [Launch] {
-        successful().filter({ Calendar.current.dateComponents([.year], from: $0.date) == year })
+        nonFailure().filter({ Calendar.current.dateComponents([.year], from: $0.date) == year })
     }
 }
 
 class LaunchTests: XCTestCase {
-    func test_filterBySuccess_returnsSeccessfullLaunch() {
-        let success1 = makeUniqueSuccessfulLaunch()
-        let success2 = makeUniqueSuccessfulLaunch()
-        let unsuccess1 = makeUniqueUnSuccessfulLaunch()
-        let unsuccess2 = makeUniqueUnSuccessfulLaunch()
+    func test_filterBySuccess_returnsNonFailureLaunch() {
+        let nonFailure1 = makeUniqueSuccessfulLaunch()
+        let nonFailure2 = makeUniqueSuccessfulLaunch()
+        let failure1 = makeUniqueUnSuccessfulLaunch()
+        let failure2 = makeUniqueUnSuccessfulLaunch()
         
-        XCTAssertEqual([success1, unsuccess1, success2, unsuccess2].successful(), [success1, success2])
+        XCTAssertEqual([nonFailure1, failure1, nonFailure2, failure2].nonFailure(), [nonFailure1, nonFailure2])
     }
     
-    func test_filterByYear_returnsOnlySuccessfulLaunchDuringTargetYear() {
+    func test_filterByYear_returnsOnlyNonFailureLaunchesDuringTargetYear() {
         let date = Date()
         let threeYearOldDate = dateFrom(date, adding: -3)
         let fiveYearOldDate = dateFrom(date, adding: -5)
@@ -53,15 +53,15 @@ class LaunchTests: XCTestCase {
         let lastThirdYear = calendar.dateComponents([.year], from: threeYearOldDate)
         let lastFifthYear = calendar.dateComponents([.year], from: fiveYearOldDate)
         
-        let threeYearOldSuccess = makeUniqueSuccessfulLaunch(threeYearOldDate)
-        let threeYearOldUnsuccess = makeUniqueUnSuccessfulLaunch(threeYearOldDate)
+        let threeYearOldNonFailure = makeUniqueSuccessfulLaunch(threeYearOldDate)
+        let threeYearOldFailure = makeUniqueUnSuccessfulLaunch(threeYearOldDate)
         
-        let fiveYearOldsuccess = makeUniqueSuccessfulLaunch(fiveYearOldDate)
-        let fiveYearOldUnsuccess = makeUniqueUnSuccessfulLaunch(fiveYearOldDate)
+        let fiveYearOldNonFailure = makeUniqueSuccessfulLaunch(fiveYearOldDate)
+        let fiveYearOldFailure = makeUniqueUnSuccessfulLaunch(fiveYearOldDate)
         
-        XCTAssertEqual([threeYearOldSuccess, threeYearOldUnsuccess, fiveYearOldsuccess, fiveYearOldUnsuccess].filterByYear(lastThirdYear), [threeYearOldSuccess])
+        XCTAssertEqual([threeYearOldNonFailure, threeYearOldFailure, fiveYearOldNonFailure, fiveYearOldFailure].filterByYear(lastThirdYear), [threeYearOldNonFailure])
         
-        XCTAssertEqual([threeYearOldSuccess, threeYearOldUnsuccess, fiveYearOldsuccess, fiveYearOldUnsuccess].filterByYear(lastFifthYear), [fiveYearOldsuccess])
+        XCTAssertEqual([threeYearOldNonFailure, threeYearOldFailure, fiveYearOldNonFailure, fiveYearOldFailure].filterByYear(lastFifthYear), [fiveYearOldNonFailure])
     }
     
     // MARK: - Helper
