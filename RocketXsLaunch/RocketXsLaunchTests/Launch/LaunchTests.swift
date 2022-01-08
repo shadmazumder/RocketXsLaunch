@@ -38,8 +38,16 @@ class LaunchTests: XCTestCase {
         Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: true)
     }
     
-    private func makeUniqueUnSuccessfulLaunch(date: Date = Date()) -> Launch {
+    private func makeUniqueUnSuccessfulLaunch(_ date: Date = Date()) -> Launch {
         Launch(name: "Any Name", id: UUID(), details: "Some details", date: date, imageUrl: nil, rocketId: UUID(), success: false)
+    }
+    
+    private var calendar: Calendar{
+        Calendar(identifier: .gregorian)
+    }
+    
+    private func dateFrom(_ date: Date = Date() , adding year: Int) -> Date {
+        calendar.date(byAdding: .year, value: year, to: date)!
     }
 }
 
