@@ -43,9 +43,20 @@ final class RemoteLoader<T: Decodable>{
     
     private func mapSuccessFrom(_ response: HTTPURLResponse, _ data: Data, _ completion: @escaping ((Result) -> Void)) {
         if response.statusCode == 200 {
-            completion(.success([]))
+            mapResultFrom(data, completion: completion)
         }else {
             completion(.failure(Error.non200HTTPResponse))
+        }
+    }
+    
+    private func mapResultFrom(_ data: Data, completion: @escaping ((Result) -> Void)) {
+        do {
+            let jsonDecoder = JSONDecoder()
+            jsonDecoder.dateDecodingStrategy = .iso8601
+            let root = try jsonDecoder.decode(T.self, from: data)
+            completion(.success(root))
+        } catch {
+            completion(.failure(Error.invalidData))
         }
     }
 }
@@ -105,6 +116,15 @@ class RemoteLoaderTests: XCTestCase {
         }
     }
     
+    func test_load_deliversItemsOn200HTTPResponseWithJSONItems() {
+        let (sut, client) = makeSUT()
+        let jsonWithData = anyValidJsonStringWithData()
+
+        expect(sut, tocompleteWith: .success(jsonWithData.validJsonString)) {
+            client.completeWith(jsonWithData.data)
+        }
+    }
+    
     // MARK: - Helper
     private func makeSUT(_ url: URL = URL(string: "some-url")!) -> (sut: RemoteLoader<String>, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
@@ -136,6 +156,16 @@ class RemoteLoaderTests: XCTestCase {
         action()
 
         wait(for: [exp], timeout: 1.0)
+    }
+    
+    private func anyValidJsonStringWithData() -> (validJsonString: String, data: Data) {
+        let validJsonString = "{\"id\":\"some-id\"}"
+        
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        let data = try! encoder.encode(validJsonString)
+
+        return (validJsonString, data)
     }
 }
 
