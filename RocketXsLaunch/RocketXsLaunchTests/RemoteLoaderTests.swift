@@ -31,10 +31,10 @@ final class RemoteLoader<T: Decodable>{
     }
     
     public func load(completion: @escaping ((Result) -> Void)) {
-        client.get(from: url) { result in
+        client.get(from: url) {[weak self] result in
             switch result {
             case let .success((data, response)):
-                self.mapSuccessFrom(response, data, completion)
+                self?.mapSuccessFrom(response, data, completion)
             default:
                 completion(.failure(.connectivity))
             }
@@ -123,6 +123,18 @@ class RemoteLoaderTests: XCTestCase {
         expect(sut, tocompleteWith: .success(jsonWithData.validJsonString)) {
             client.completeWith(jsonWithData.data)
         }
+    }
+    
+    func test_load_doesNotDeliverResultAfterSUTBeenDeallocated() {
+        let client = HTTPClientSpy()
+        var sut: RemoteLoader<String>? = RemoteLoader(url: anyURL(), client: client)
+        var receivedResult: RemoteLoader<String>.Result?
+        sut?.load(completion: { receivedResult = $0 })
+
+        sut = nil
+        client.completeWith(anyValidJsonStringWithData().data)
+
+        XCTAssertNil(receivedResult)
     }
     
     // MARK: - Helper
