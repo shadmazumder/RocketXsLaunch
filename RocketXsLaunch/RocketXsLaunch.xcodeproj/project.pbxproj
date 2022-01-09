@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A13BAD84278A13110033FC8E /* RemoteLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BAD83278A13110033FC8E /* RemoteLoaderTests.swift */; };
+		A13BAD87278AB4220033FC8E /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BAD86278AB4220033FC8E /* HTTPClient.swift */; };
 		A18ACE732789B5600004A3FE /* RocketXsLaunch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18ACE6A2789B55F0004A3FE /* RocketXsLaunch.framework */; };
 		A18ACE842789BEFA0004A3FE /* LaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACE832789BEFA0004A3FE /* LaunchTests.swift */; };
 		A18ACE872789FFE40004A3FE /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACE862789FFE40004A3FE /* Launch.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		A13BAD83278A13110033FC8E /* RemoteLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoaderTests.swift; sourceTree = "<group>"; };
+		A13BAD86278AB4220033FC8E /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		A18ACE6A2789B55F0004A3FE /* RocketXsLaunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RocketXsLaunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18ACE722789B5600004A3FE /* RocketXsLaunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketXsLaunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18ACE832789BEFA0004A3FE /* LaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTests.swift; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A13BAD85278AB3FF0033FC8E /* RemoteLoad */ = {
+			isa = PBXGroup;
+			children = (
+				A13BAD86278AB4220033FC8E /* HTTPClient.swift */,
+			);
+			path = RemoteLoad;
+			sourceTree = "<group>";
+		};
 		A18ACE602789B55F0004A3FE = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +81,7 @@
 		A18ACE6C2789B55F0004A3FE /* RocketXsLaunch */ = {
 			isa = PBXGroup;
 			children = (
+				A13BAD85278AB3FF0033FC8E /* RemoteLoad */,
 				A18ACE852789FFB20004A3FE /* Launch */,
 			);
 			path = RocketXsLaunch;
@@ -211,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A13BAD87278AB4220033FC8E /* HTTPClient.swift in Sources */,
 				A18ACE872789FFE40004A3FE /* Launch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

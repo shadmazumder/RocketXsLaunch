@@ -6,12 +6,7 @@
 //
 
 import XCTest
-
-protocol HTTPClient {
-    typealias Result = Swift.Result<(Data, HTTPURLResponse), Error>
-
-    func get(from url: URL, completion: @escaping (Result) -> Void)
-}
+import RocketXsLaunch
 
 final class RemoteLoader<T: Decodable>{
     typealias Result = Swift.Result<T, Error>
