@@ -140,12 +140,12 @@ class RemoteLoaderTests: XCTestCase {
 }
 
 private class HTTPClientSpy: HTTPClient {
-    var message = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
+    var message = [(url: URL, completion: (HTTPResult) -> Void)]()
     var requestedURL: [URL] {
         message.map({ $0.url })
     }
     
-    func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
+    func get(from url: URL, completion: @escaping (HTTPResult) -> Void) {
         message.append((url, completion))
     }
     

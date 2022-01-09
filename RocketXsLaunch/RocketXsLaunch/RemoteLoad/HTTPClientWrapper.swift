@@ -10,7 +10,7 @@ import Foundation
 public class HTTPClientWrapper: HTTPClient {
     public init() {}
     
-    public func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
+    public func get(from url: URL, completion: @escaping (HTTPResult) -> Void) {
         
     }
 }
