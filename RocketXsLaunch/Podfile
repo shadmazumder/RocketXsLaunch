@@ -1,0 +1,10 @@
+project 'RocketXsLaunch'
+workspace '../RocketXsLaunchSpace'
+
+platform :osx, '11.3'
+use_frameworks!
+
+target 'RocketXsLaunch' do
+  pod 'Alamofire', '~> 5.5'
+  target 'RocketXsLaunchTests'
+end
