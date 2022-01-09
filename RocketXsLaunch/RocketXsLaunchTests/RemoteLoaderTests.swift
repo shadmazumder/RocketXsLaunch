@@ -33,11 +33,19 @@ final class RemoteLoader<T: Decodable>{
     public func load(completion: @escaping ((Result) -> Void)) {
         client.get(from: url) { result in
             switch result {
-            case .success:
-                completion(.failure(.non200HTTPResponse))
+            case let .success((data, response)):
+                self.mapSuccessFrom(response, data, completion)
             default:
                 completion(.failure(.connectivity))
             }
+        }
+    }
+    
+    private func mapSuccessFrom(_ response: HTTPURLResponse, _ data: Data, _ completion: @escaping ((Result) -> Void)) {
+        if response.statusCode == 200 {
+            completion(.success([]))
+        }else {
+            completion(.failure(Error.non200HTTPResponse))
         }
     }
 }
@@ -87,6 +95,16 @@ class RemoteLoaderTests: XCTestCase {
         } })
     }
     
+    func test_load_deliversEmptyItemsOn200HTTPResponseWithEmptyJSON() {
+        let (sut, client) = makeSUT()
+        let emptyEntities = [String]()
+
+        expect(sut, tocompleteWith: .success([])) {
+            let data = try! JSONEncoder().encode(emptyEntities)
+            client.completeWith(data)
+        }
+    }
+    
     // MARK: - Helper
     private func makeSUT(_ url: URL = URL(string: "some-url")!) -> (sut: RemoteLoader<String>, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
@@ -104,6 +122,8 @@ class RemoteLoaderTests: XCTestCase {
 
         sut.load { result in
             switch (result, expectedResult) {
+            case let (.success(recieved), .success(expected)):
+                XCTAssertEqual(recieved, expected, file: file, line: line)
             case let (.failure(receivedError), .failure(expectedError)):
                 XCTAssertEqual(receivedError.localizedDescription, expectedError.localizedDescription, file: file, line: line)
 
