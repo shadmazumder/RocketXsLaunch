@@ -14,7 +14,7 @@ protocol HTTPClient {
 }
 
 final class RemoteLoader<T: Decodable>{
-    typealias Result = Swift.Result<[T], Error>
+    typealias Result = Swift.Result<T, Error>
     
     public enum Error: Swift.Error {
         case connectivity
@@ -97,9 +97,9 @@ class RemoteLoaderTests: XCTestCase {
     
     func test_load_deliversEmptyItemsOn200HTTPResponseWithEmptyJSON() {
         let (sut, client) = makeSUT()
-        let emptyEntities = [String]()
+        let emptyEntities = ""
 
-        expect(sut, tocompleteWith: .success([])) {
+        expect(sut, tocompleteWith: .success("")) {
             let data = try! JSONEncoder().encode(emptyEntities)
             client.completeWith(data)
         }
