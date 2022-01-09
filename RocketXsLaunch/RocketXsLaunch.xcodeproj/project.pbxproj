@@ -11,6 +11,7 @@
 		A13BAD87278AB4220033FC8E /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BAD86278AB4220033FC8E /* HTTPClient.swift */; };
 		A13BAD89278AB4AC0033FC8E /* RemoteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BAD88278AB4AC0033FC8E /* RemoteLoader.swift */; };
 		A13BAD8D278AC8130033FC8E /* HTTPClientWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BAD8C278AC8130033FC8E /* HTTPClientWrapperTests.swift */; };
+		A13BAD8F278ACA930033FC8E /* HTTPClientWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BAD8E278ACA930033FC8E /* HTTPClientWrapper.swift */; };
 		A18ACE732789B5600004A3FE /* RocketXsLaunch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18ACE6A2789B55F0004A3FE /* RocketXsLaunch.framework */; };
 		A18ACE842789BEFA0004A3FE /* LaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACE832789BEFA0004A3FE /* LaunchTests.swift */; };
 		A18ACE872789FFE40004A3FE /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACE862789FFE40004A3FE /* Launch.swift */; };
@@ -31,6 +32,7 @@
 		A13BAD86278AB4220033FC8E /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		A13BAD88278AB4AC0033FC8E /* RemoteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoader.swift; sourceTree = "<group>"; };
 		A13BAD8C278AC8130033FC8E /* HTTPClientWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientWrapperTests.swift; sourceTree = "<group>"; };
+		A13BAD8E278ACA930033FC8E /* HTTPClientWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientWrapper.swift; sourceTree = "<group>"; };
 		A18ACE6A2789B55F0004A3FE /* RocketXsLaunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RocketXsLaunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18ACE722789B5600004A3FE /* RocketXsLaunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketXsLaunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18ACE832789BEFA0004A3FE /* LaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTests.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				A13BAD86278AB4220033FC8E /* HTTPClient.swift */,
+				A13BAD8E278ACA930033FC8E /* HTTPClientWrapper.swift */,
 				A13BAD88278AB4AC0033FC8E /* RemoteLoader.swift */,
 			);
 			path = RemoteLoad;
@@ -230,6 +233,7 @@
 			files = (
 				A13BAD87278AB4220033FC8E /* HTTPClient.swift in Sources */,
 				A13BAD89278AB4AC0033FC8E /* RemoteLoader.swift in Sources */,
+				A13BAD8F278ACA930033FC8E /* HTTPClientWrapper.swift in Sources */,
 				A18ACE872789FFE40004A3FE /* Launch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
