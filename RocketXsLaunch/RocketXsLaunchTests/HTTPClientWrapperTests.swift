@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import RocketXsLaunch
 
 class HTTPClientWrapperTests: XCTestCase {
     override func setUp() {
@@ -16,6 +17,34 @@ class HTTPClientWrapperTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
         URLProtocolStub.stopInterceptingRequest()
+    }
+    
+    func test_getFromURL_performsGETRequestWithURL() {
+        let givenURL = anyURL()
+        let exp = expectation(description: "Waiting for response")
+
+        URLProtocolStub.observeRequest { request in
+            XCTAssertEqual(request.url, givenURL)
+            XCTAssertEqual(request.httpMethod, "GET")
+            exp.fulfill()
+        }
+
+        makeSUT().get(from: givenURL) { _ in }
+
+        wait(for: [exp], timeout: 0.5)
+    }
+    
+    // MARK: - Helper
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
+        let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.protocolClasses = [URLProtocolStub.self]
+        
+        let sut = HTTPClientWrapper(sessionCofiguration: sessionConfig)
+        return sut
+    }
+
+    private func anyURL() -> URL {
+        return URL(string: "any-url")!
     }
 }
 
