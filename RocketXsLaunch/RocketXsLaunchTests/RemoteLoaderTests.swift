@@ -127,8 +127,8 @@ class RemoteLoaderTests: XCTestCase {
     
     func test_load_doesNotDeliverResultAfterSUTBeenDeallocated() {
         let client = HTTPClientSpy()
-        var sut: RemoteLoader<String>? = RemoteLoader(url: anyURL(), client: client)
-        var receivedResult: RemoteLoader<String>.Result?
+        var sut: RemoteLoaderStringType? = RemoteLoaderStringType(url: anyURL(), client: client)
+        var receivedResult: RemoteLoaderStringType.Result?
         sut?.load(completion: { receivedResult = $0 })
 
         sut = nil
@@ -138,9 +138,11 @@ class RemoteLoaderTests: XCTestCase {
     }
     
     // MARK: - Helper
-    private func makeSUT(_ url: URL = URL(string: "some-url")!) -> (sut: RemoteLoader<String>, client: HTTPClientSpy) {
+    private typealias RemoteLoaderStringType = RemoteLoader<String>
+    
+    private func makeSUT(_ url: URL = URL(string: "some-url")!) -> (sut: RemoteLoaderStringType, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
-        let sut = RemoteLoader<String>(url: url, client: client)
+        let sut = RemoteLoaderStringType(url: url, client: client)
         
         trackMemoryLeak(client)
         trackMemoryLeak(sut)
@@ -152,7 +154,7 @@ class RemoteLoaderTests: XCTestCase {
         return URL(string: "any-url")!
     }
     
-    private func expect(_ sut: RemoteLoader<String>, tocompleteWith expectedResult: RemoteLoader<String>.Result, when action: ()-> Void, file: StaticString = #file, line: UInt = #line) {
+    private func expect(_ sut: RemoteLoaderStringType, tocompleteWith expectedResult: RemoteLoaderStringType.Result, when action: ()-> Void, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Waiting for the client")
 
         sut.load { result in
@@ -183,7 +185,7 @@ class RemoteLoaderTests: XCTestCase {
         return (validJsonString, data)
     }
     
-    func trackMemoryLeak(_ instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
+    private func trackMemoryLeak(_ instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
         addTeardownBlock { [weak instance] in
             XCTAssertNil(instance, "Memory Leak!!! Didn't deallocated", file: file, line: line)
         }
