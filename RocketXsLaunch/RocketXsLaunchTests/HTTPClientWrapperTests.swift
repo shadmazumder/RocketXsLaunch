@@ -8,6 +8,15 @@
 import XCTest
 
 class HTTPClientWrapperTests: XCTestCase {
+    override func setUp() {
+        super.setUp()
+        URLProtocolStub.startInterceptingRequest()
+    }
+
+    override func tearDown() {
+        super.tearDown()
+        URLProtocolStub.stopInterceptingRequest()
+    }
 }
 
 private class URLProtocolStub: URLProtocol {
