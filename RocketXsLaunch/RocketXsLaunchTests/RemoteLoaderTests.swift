@@ -13,8 +13,8 @@ protocol HTTPClient {
     func get(from url: URL, completion: @escaping (Result) -> Void)
 }
 
-final class RemotePostLoader{
-    typealias Result = Swift.Result<[Decodable], Error>
+final class RemoteLoader<T: Decodable>{
+    typealias Result = Swift.Result<[T], Error>
     
     public enum Error: Swift.Error {
         case connectivity
@@ -72,7 +72,7 @@ class RemoteLoaderTests: XCTestCase {
         let (sut, client) = makeSUT()
         let anyError = NSError(domain: "Any doamin", code: 0)
 
-        expect(sut, tocompleteWith: .failure(RemotePostLoader.Error.connectivity)) {
+        expect(sut, tocompleteWith: .failure(RemoteLoader.Error.connectivity)) {
             client.completeWithError(anyError)
         }
     }
@@ -82,15 +82,15 @@ class RemoteLoaderTests: XCTestCase {
         let non200HTTPResponseStatusCode = [199, 201, 233, 401]
 
         non200HTTPResponseStatusCode.enumerated().forEach({ index, statusCode in
-            expect(sut, tocompleteWith: .failure(RemotePostLoader.Error.non200HTTPResponse)) {
+            expect(sut, tocompleteWith: .failure(RemoteLoader.Error.non200HTTPResponse)) {
                 client.completeWith(Data(), statusCode: statusCode, index: index)
         } })
     }
     
     // MARK: - Helper
-    private func makeSUT(_ url: URL = URL(string: "some-url")!) -> (sut: RemotePostLoader, client: HTTPClientSpy) {
+    private func makeSUT(_ url: URL = URL(string: "some-url")!) -> (sut: RemoteLoader<String>, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
-        let sut = RemotePostLoader(url: url, client: client)
+        let sut = RemoteLoader<String>(url: url, client: client)
 
         return(sut, client)
     }
@@ -99,7 +99,7 @@ class RemoteLoaderTests: XCTestCase {
         return URL(string: "any-url")!
     }
     
-    private func expect(_ sut: RemotePostLoader, tocompleteWith expectedResult: RemotePostLoader.Result, when action: ()-> Void, file: StaticString = #file, line: UInt = #line) {
+    private func expect(_ sut: RemoteLoader<String>, tocompleteWith expectedResult: RemoteLoader<String>.Result, when action: ()-> Void, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Waiting for the client")
 
         sut.load { result in
