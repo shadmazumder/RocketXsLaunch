@@ -48,7 +48,6 @@ public final class RemoteLoader<T: Decodable>{
         do {
             let jsonDecoder = JSONDecoder()
             jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-            jsonDecoder.dateDecodingStrategy = .iso8601
             let root = try jsonDecoder.decode(T.self, from: data)
             completion(.success(root))
         } catch {
