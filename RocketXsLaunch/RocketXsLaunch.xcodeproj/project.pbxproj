@@ -102,6 +102,14 @@
 			path = RemoteLoad;
 			sourceTree = "<group>";
 		};
+		A1644A66278BCC680071FF81 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A1644A62278BBB730071FF81 /* XCTTestCase+MemoryTracking.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		A18ACE602789B55F0004A3FE = {
 			isa = PBXGroup;
 			children = (
@@ -134,10 +142,10 @@
 		A18ACE762789B5600004A3FE /* RocketXsLaunchTests */ = {
 			isa = PBXGroup;
 			children = (
+				A1644A66278BCC680071FF81 /* Helper */,
 				A18ACE822789B70F0004A3FE /* Launch */,
 				A13BAD83278A13110033FC8E /* RemoteLoaderTests.swift */,
 				A13BAD8C278AC8130033FC8E /* HTTPClientWrapperTests.swift */,
-				A1644A62278BBB730071FF81 /* XCTTestCase+MemoryTracking.swift */,
 			);
 			path = RocketXsLaunchTests;
 			sourceTree = "<group>";
