@@ -42,6 +42,18 @@ class HTTPClientWrapperTests: XCTestCase {
         XCTAssertNotNil(receivedError)
     }
     
+    func test_getFromURL_failsOnAllInvalidValueRepresentatio() {
+        XCTAssertNotNil(requestErrorFor(data: nil, response: nil, expectedError: nil))
+        XCTAssertNotNil(requestErrorFor(data: nil, response: nonHTTPURLResponse(), expectedError: nil))
+        XCTAssertNotNil(requestErrorFor(data: anyData(), response: nil, expectedError: nil))
+        XCTAssertNotNil(requestErrorFor(data: anyData(), response: anyHTTPURLResponse(), expectedError: anyNSError()))
+        XCTAssertNotNil(requestErrorFor(data: nil, response: nonHTTPURLResponse(), expectedError: anyNSError()))
+        XCTAssertNotNil(requestErrorFor(data: nil, response: anyHTTPURLResponse(), expectedError: anyNSError()))
+        XCTAssertNotNil(requestErrorFor(data: anyData(), response: nonHTTPURLResponse(), expectedError: anyNSError()))
+        XCTAssertNotNil(requestErrorFor(data: anyData(), response: anyHTTPURLResponse(), expectedError: anyNSError()))
+        XCTAssertNotNil(requestErrorFor(data: anyData(), response: nonHTTPURLResponse(), expectedError: nil))
+    }
+    
     // MARK: - Helper
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
         let sessionConfig = URLSessionConfiguration.default
@@ -83,6 +95,22 @@ class HTTPClientWrapperTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
         
         return receivedResults
+    }
+    
+    private func nonHTTPURLResponse() -> URLResponse {
+        return URLResponse(url: anyValidURL(), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+    }
+
+    private func anyHTTPURLResponse() -> HTTPURLResponse {
+        return HTTPURLResponse(url: anyValidURL(), statusCode: 200, httpVersion: nil, headerFields: nil)!
+    }
+    
+    private func anyData() -> Data {
+        return Data("any data".utf8)
+    }
+    
+    func anyNSError() -> NSError {
+        return NSError(domain: "any domain", code: 0, userInfo: nil)
     }
 }
 

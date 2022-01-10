@@ -10,6 +10,7 @@ import Alamofire
 
 public class HTTPClientWrapper: HTTPClient {
     private let session: Session
+    private struct UnexpectedError: Error {}
     
     public init(sessionCofiguration: URLSessionConfiguration? = nil) {
         let config: URLSessionConfiguration
@@ -25,8 +26,12 @@ public class HTTPClientWrapper: HTTPClient {
     
     public func get(from url: URL, completion: @escaping (HTTPResult) -> Void) {
         session.request(url).response { response in
-            if let error = response.error{
+            if let error = response.error {
                 completion(.failure(error))
+            }else if let data = response.data, let response = response.response {
+                completion(.success((data, response)))
+            }else {
+                completion(.failure(UnexpectedError()))
             }
         }
     }
