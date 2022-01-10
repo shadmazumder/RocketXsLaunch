@@ -97,8 +97,7 @@
 		A13BAD85278AB3FF0033FC8E /* RemoteLoad */ = {
 			isa = PBXGroup;
 			children = (
-				A13BAD86278AB4220033FC8E /* HTTPClient.swift */,
-				A13BAD8E278ACA930033FC8E /* HTTPClientWrapper.swift */,
+				A166E83B278C2168001DF5C5 /* HTTPClient */,
 				A13BAD88278AB4AC0033FC8E /* RemoteLoader.swift */,
 			);
 			path = RemoteLoad;
@@ -111,6 +110,15 @@
 				A1644A67278BCC9B0071FF81 /* HTTPClientSpy.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		A166E83B278C2168001DF5C5 /* HTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				A13BAD86278AB4220033FC8E /* HTTPClient.swift */,
+				A13BAD8E278ACA930033FC8E /* HTTPClientWrapper.swift */,
+			);
+			path = HTTPClient;
 			sourceTree = "<group>";
 		};
 		A18ACE602789B55F0004A3FE = {
