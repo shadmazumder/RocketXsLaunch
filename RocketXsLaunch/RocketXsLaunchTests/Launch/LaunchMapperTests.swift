@@ -8,39 +8,6 @@
 import XCTest
 import RocketXsLaunch
 
-struct Patch: Decodable{
-    let small: String
-}
-
-struct Links: Decodable{
-    let patch: Patch
-}
-
-struct LaunchAPIModel: Decodable {
-    enum CodingKeys: String, CodingKey{
-        case name
-        case id
-        case details
-        case dateString = "dateUtc"
-        case links
-        case rocketId = "rocket"
-        case success
-        case upcoming
-    }
-    
-    public let name: String
-    public let id: String
-    public let details: String
-    public let dateString: String
-    public let links: Links
-    public let rocketId: String
-    public let success: Bool?
-    public let upcoming: Bool
-    
-    public var imageUrl: URL?{ URL(string: links.patch.small) }
-    public var date: Date? { ISO8601DateFormatter().date(from: dateString) }
-}
-
 class LaunchMapperTests: XCTestCase {
     func test_jsonDataMapsLaunchAPIModel() {
         let sut = makeSUT()
@@ -53,7 +20,7 @@ class LaunchMapperTests: XCTestCase {
         loader.load { result in
             switch (result) {
             case let .success(recieved):
-                XCTAssertEqual(recieved, sut.model)
+                XCTAssertEqual(recieved.mapper, sut.model.mapper)
             default:
                 XCTFail("Expected \(sut.model) but got \(result)")
             }
@@ -154,8 +121,49 @@ class LaunchMapperTests: XCTestCase {
     }
 }
 
-extension LaunchAPIModel: Equatable{
-    static func == (lhs: LaunchAPIModel, rhs: LaunchAPIModel) -> Bool {
+public struct LaunchAPIModelMapper {
+    public let name: String
+    public let id: String
+    public let details: String
+    public let dateString: String
+    public let links: Links
+    public let rocketId: String
+    public let success: Bool?
+    public let upcoming: Bool
+    
+    public var imageUrl: URL?{ URL(string: links.patch.small) }
+    public var date: Date? { ISO8601DateFormatter().date(from: dateString) }
+}
+
+extension LaunchAPIModelMapper{
+    var model: LaunchAPIModel{
+        LaunchAPIModel(name: name,
+                       id: id,
+                       details: details,
+                       dateString: dateString,
+                       links: links,
+                       rocketId: rocketId,
+                       success: success,
+                       upcoming: upcoming)
+    }
+}
+
+extension LaunchAPIModelMapper: Equatable{
+    public static func == (lhs: LaunchAPIModelMapper, rhs: LaunchAPIModelMapper) -> Bool {
         lhs.id == rhs.id
+    }
+    
+}
+
+extension LaunchAPIModel{
+    var mapper: LaunchAPIModelMapper{
+        LaunchAPIModelMapper(name: name,
+                             id: id,
+                             details: details,
+                             dateString: dateString,
+                             links: links,
+                             rocketId: rocketId,
+                             success: success,
+                             upcoming: upcoming)
     }
 }

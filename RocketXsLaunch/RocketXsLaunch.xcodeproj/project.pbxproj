@@ -16,6 +16,7 @@
 		A1644A63278BBB730071FF81 /* XCTTestCase+MemoryTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1644A62278BBB730071FF81 /* XCTTestCase+MemoryTracking.swift */; };
 		A1644A65278BBF770071FF81 /* LaunchMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1644A64278BBF770071FF81 /* LaunchMapperTests.swift */; };
 		A1644A68278BCC9B0071FF81 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1644A67278BCC9B0071FF81 /* HTTPClientSpy.swift */; };
+		A166E83D278C21EA001DF5C5 /* LaunchAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A166E83C278C21EA001DF5C5 /* LaunchAPIModel.swift */; };
 		A18ACE732789B5600004A3FE /* RocketXsLaunch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18ACE6A2789B55F0004A3FE /* RocketXsLaunch.framework */; };
 		A18ACE842789BEFA0004A3FE /* LaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACE832789BEFA0004A3FE /* LaunchTests.swift */; };
 		A18ACE872789FFE40004A3FE /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACE862789FFE40004A3FE /* Launch.swift */; };
@@ -45,6 +46,7 @@
 		A1644A62278BBB730071FF81 /* XCTTestCase+MemoryTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTTestCase+MemoryTracking.swift"; sourceTree = "<group>"; };
 		A1644A64278BBF770071FF81 /* LaunchMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchMapperTests.swift; sourceTree = "<group>"; };
 		A1644A67278BCC9B0071FF81 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
+		A166E83C278C21EA001DF5C5 /* LaunchAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAPIModel.swift; sourceTree = "<group>"; };
 		A18ACE6A2789B55F0004A3FE /* RocketXsLaunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RocketXsLaunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18ACE722789B5600004A3FE /* RocketXsLaunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketXsLaunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18ACE832789BEFA0004A3FE /* LaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTests.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				A166E83B278C2168001DF5C5 /* HTTPClient */,
 				A13BAD88278AB4AC0033FC8E /* RemoteLoader.swift */,
+				A166E83C278C21EA001DF5C5 /* LaunchAPIModel.swift */,
 			);
 			path = RemoteLoad;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 			files = (
 				A13BAD87278AB4220033FC8E /* HTTPClient.swift in Sources */,
 				A13BAD89278AB4AC0033FC8E /* RemoteLoader.swift in Sources */,
+				A166E83D278C21EA001DF5C5 /* LaunchAPIModel.swift in Sources */,
 				A13BAD8F278ACA930033FC8E /* HTTPClientWrapper.swift in Sources */,
 				A18ACE872789FFE40004A3FE /* Launch.swift in Sources */,
 			);
