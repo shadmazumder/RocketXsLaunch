@@ -24,6 +24,10 @@ public class HTTPClientWrapper: HTTPClient {
     }
     
     public func get(from url: URL, completion: @escaping (HTTPResult) -> Void) {
-        session.request(url).response { _ in }
+        session.request(url).response { response in
+            if let error = response.error{
+                completion(.failure(error))
+            }
+        }
     }
 }
