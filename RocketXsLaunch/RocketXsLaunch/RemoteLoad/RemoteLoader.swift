@@ -14,6 +14,7 @@ public final class RemoteLoader<T: Decodable>{
         case connectivity
         case non200HTTPResponse
         case invalidData
+        case decoding(DecodingError)
     }
 
     private let url: URL
@@ -51,7 +52,15 @@ public final class RemoteLoader<T: Decodable>{
             let root = try jsonDecoder.decode(T.self, from: data)
             completion(.success(root))
         } catch {
-            completion(.failure(Error.invalidData))
+            mapErrorFrom(error, completion)
+        }
+    }
+    
+    private func mapErrorFrom(_ decodingError: Swift.Error, _ completion: ((Result) -> Void)) {
+        if let decodingError = decodingError as? DecodingError {
+            completion(.failure(.decoding(decodingError)))
+        }else {
+            completion(.failure(.invalidData))
         }
     }
 }
