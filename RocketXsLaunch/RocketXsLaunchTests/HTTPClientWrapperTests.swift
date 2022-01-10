@@ -67,6 +67,15 @@ class HTTPClientWrapperTests: XCTestCase {
 
     }
     
+    func test_getFromURL_failsWithNilDataOnHTTPURLResponseWithNilData() {
+        let expectedHTTPResponse = anyHTTPURLResponse()
+        let receivedError = requestErrorFor(data: nil, response: expectedHTTPResponse, expectedError: nil)
+
+        URLProtocolStub.stub(data: nil, response: expectedHTTPResponse, error: nil)
+
+        XCTAssertNotNil(receivedError)
+    }
+    
     // MARK: - Helper
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
         let sessionConfig = URLSessionConfiguration.default
