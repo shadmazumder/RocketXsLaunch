@@ -89,6 +89,11 @@ class RemoteLoaderTests: XCTestCase {
             let flightNumber: Int
         }
         let expectedResult = Flight(flightNumber: 1)
+        let json = """
+        {
+            "flight_number": 1
+        }
+        """.data(using: .utf8)!
         
         let client = HTTPClientSpy()
         let sut = RemoteLoader<Flight>(url: URL(string: "any-url")!, client: client)
@@ -104,12 +109,6 @@ class RemoteLoaderTests: XCTestCase {
             }
             exp.fulfill()
         }
-
-        let json = """
-        {
-            "flight_number": 1
-        }
-        """.data(using: .utf8)!
         
         client.completeWith(json)
 
