@@ -54,6 +54,19 @@ class HTTPClientWrapperTests: XCTestCase {
         XCTAssertNotNil(requestErrorFor(data: anyData(), response: nonHTTPURLResponse(), expectedError: nil))
     }
     
+    func test_getFromURL_suceedsOnHTTPURLResponseWithData() {
+        let expectedData = anyData()
+        let expectedHTTPResponse = anyHTTPURLResponse()
+        let receivedValues = requestValuesFor(data: expectedData, response: expectedHTTPResponse, expectedError: nil)
+
+        URLProtocolStub.stub(data: expectedData, response: expectedHTTPResponse, error: nil)
+
+        XCTAssertEqual(receivedValues?.data, expectedData)
+        XCTAssertEqual(receivedValues?.response.url, expectedHTTPResponse.url)
+        XCTAssertEqual(receivedValues?.response.statusCode, expectedHTTPResponse.statusCode)
+
+    }
+    
     // MARK: - Helper
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
         let sessionConfig = URLSessionConfiguration.default
@@ -95,6 +108,18 @@ class HTTPClientWrapperTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
         
         return receivedResults
+    }
+    
+    private func requestValuesFor(data: Data?, response: URLResponse?, expectedError: Error?, file: StaticString = #file, line: UInt = #line) -> (data: Data, response: HTTPURLResponse)? {
+        let result  = requestResultFor(data: data, response: response, expectedError: expectedError, file: file, line: line)
+
+        switch result {
+        case let .success((receivedData, receivedResponse)):
+            return (receivedData, receivedResponse)
+        default:
+            XCTFail("Was expecting Success but got \(result)", file: file, line: line)
+            return nil
+        }
     }
     
     private func nonHTTPURLResponse() -> URLResponse {
