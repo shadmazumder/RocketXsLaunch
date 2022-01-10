@@ -32,6 +32,8 @@ class LaunchMapperTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
+    // MARK: - Helper
+    
     private func makeSUT() -> (model: LaunchAPIModel, data: Data){
         (launchApiModel, launchApiModelJson)
     }
@@ -118,52 +120,5 @@ class LaunchMapperTests: XCTestCase {
             "id": "\(launchApiModel.id)"
         }
         """.data(using: .utf8)!
-    }
-}
-
-public struct LaunchAPIModelMapper {
-    public let name: String
-    public let id: String
-    public let details: String
-    public let dateString: String
-    public let links: Links
-    public let rocketId: String
-    public let success: Bool?
-    public let upcoming: Bool
-    
-    public var imageUrl: URL?{ URL(string: links.patch.small) }
-    public var date: Date? { ISO8601DateFormatter().date(from: dateString) }
-}
-
-extension LaunchAPIModelMapper{
-    var model: LaunchAPIModel{
-        LaunchAPIModel(name: name,
-                       id: id,
-                       details: details,
-                       dateString: dateString,
-                       links: links,
-                       rocketId: rocketId,
-                       success: success,
-                       upcoming: upcoming)
-    }
-}
-
-extension LaunchAPIModelMapper: Equatable{
-    public static func == (lhs: LaunchAPIModelMapper, rhs: LaunchAPIModelMapper) -> Bool {
-        lhs.id == rhs.id
-    }
-    
-}
-
-extension LaunchAPIModel{
-    var mapper: LaunchAPIModelMapper{
-        LaunchAPIModelMapper(name: name,
-                             id: id,
-                             details: details,
-                             dateString: dateString,
-                             links: links,
-                             rocketId: rocketId,
-                             success: success,
-                             upcoming: upcoming)
     }
 }
