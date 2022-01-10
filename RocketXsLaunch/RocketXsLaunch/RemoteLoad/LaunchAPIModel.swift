@@ -7,22 +7,6 @@
 
 import Foundation
 
-public struct Patch: Decodable{
-    public let small: String
-    
-    public init(small: String){
-        self.small = small
-    }
-}
-
-public struct Links: Decodable{
-    public let patch: Patch
-    
-    public init(patch: Patch) {
-        self.patch = patch
-    }
-}
-
 public struct LaunchAPIModel {
     public let name: String
     public let id: String
@@ -58,5 +42,21 @@ extension LaunchAPIModel: Decodable{
         case rocketId = "rocket"
         case success
         case upcoming
+    }
+}
+
+public struct Patch: Decodable{
+    public let small: String
+    
+    public init(small: String){
+        self.small = small
+    }
+}
+
+public struct Links: Decodable{
+    public let patch: Patch
+    
+    public init(patch: Patch) {
+        self.patch = patch
     }
 }
