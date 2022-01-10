@@ -84,6 +84,38 @@ class RemoteLoaderTests: XCTestCase {
         XCTAssertNil(receivedResult)
     }
     
+    func test_load_deliversItemOnSnakeCaseKey() {
+        struct Flight: Codable, Equatable{
+            let flightNumber: Int
+        }
+        let expectedResult = Flight(flightNumber: 1)
+        
+        let client = HTTPClientSpy()
+        let sut = RemoteLoader<Flight>(url: URL(string: "any-url")!, client: client)
+        
+        let exp = expectation(description: "Waiting for the client")
+
+        sut.load { result in
+            switch (result) {
+            case let .success(recieved):
+                XCTAssertEqual(recieved, expectedResult)
+            default:
+                XCTFail("Expected \(expectedResult) but got \(result)")
+            }
+            exp.fulfill()
+        }
+
+        let json = """
+        {
+            "flight_number": 1
+        }
+        """.data(using: .utf8)!
+        
+        client.completeWith(json)
+
+        wait(for: [exp], timeout: 1.0)
+    }
+    
     // MARK: - Helper
     private typealias RemoteLoaderStringType = RemoteLoader<String>
     
@@ -122,9 +154,7 @@ class RemoteLoaderTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
-    private func anyValidJsonStringWithData() -> (validJsonString: String, data: Data) {
-        let validJsonString = "{\"id\":\"some-id\"}"
-        
+    private func anyValidJsonStringWithData(_ validJsonString: String = "{\"id\":\"some-id\"}") -> (validJsonString: String, data: Data) {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
         let data = try! encoder.encode(validJsonString)

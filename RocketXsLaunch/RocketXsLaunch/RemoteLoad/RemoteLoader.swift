@@ -46,6 +46,7 @@ public final class RemoteLoader<T: Decodable>{
     private func mapResultFrom(_ data: Data, completion: @escaping ((Result) -> Void)) {
         do {
             let jsonDecoder = JSONDecoder()
+            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
             jsonDecoder.dateDecodingStrategy = .iso8601
             let root = try jsonDecoder.decode(T.self, from: data)
             completion(.success(root))
