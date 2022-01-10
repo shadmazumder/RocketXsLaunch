@@ -82,6 +82,7 @@ class HTTPClientWrapperTests: XCTestCase {
         sessionConfig.protocolClasses = [URLProtocolStub.self]
         
         let sut = HTTPClientWrapper(sessionCofiguration: sessionConfig)
+        trackMemoryLeak(sut)
         return sut
     }
     
