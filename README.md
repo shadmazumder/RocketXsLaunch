@@ -21,8 +21,8 @@ Running the test under `RocketXsLaunchiOSTests` might require to select a develo
 2. Also, I never used Alamofire before this project. I always built my HTTPClient.
 
 **Used library**
-1. [Alamofier](https://github.com/Alamofire/Alamofire) as HTTPClient
-2. [AlamofireImage](https://github.com/Alamofire/AlamofireImage) as Remote iamge downloader
+1. [Alamofier](https://github.com/Alamofire/Alamofire) as HTTPClient.
+2. [Kingfisher](https://github.com/onevcat/Kingfisher) as Remote iamge downloader.
 3. [RxSwift](https://github.com/ReactiveX/RxSwift) & RxCocoa for data binding.
 
 **Requirements**
