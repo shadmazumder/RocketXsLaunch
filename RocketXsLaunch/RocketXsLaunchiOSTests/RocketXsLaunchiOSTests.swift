@@ -11,18 +11,7 @@ import RocketXsLaunchiOS
 
 class RocketXsLaunchiOSTests: XCTestCase {
     func test_init_doesNotStartLoading() {
-        var counter = 0
-        struct Client: HTTPClient{
-            func get(from url: URL, completion: @escaping (HTTPResult) -> Void) {}
-        }
-        
-        let loader = RemoteLoader<LaunchAPIModel>(url: URL(string: "any-url")!, client: Client())
-        loader.load { _ in
-            counter = +1
-        }
-        
-        let _ = makeSUT(loader: loader)
-        XCTAssertEqual(counter, 0)
+        assertLoadingCount(0)
     }
     
     // MARK: - Helper
@@ -35,6 +24,21 @@ class RocketXsLaunchiOSTests: XCTestCase {
         trackMemoryLeak(loader)
         
         return sut
+    }
+    
+    private func assertLoadingCount(_ extectedCount: Int){
+        var counter = 0
+        struct Client: HTTPClient{
+            func get(from url: URL, completion: @escaping (HTTPResult) -> Void) {}
+        }
+        
+        let loader = RemoteLoader<LaunchAPIModel>(url: URL(string: "any-url")!, client: Client())
+        loader.load { _ in
+            counter = +1
+        }
+        
+        let _ = makeSUT(loader: loader)
+        XCTAssertEqual(counter, extectedCount)
     }
     
     private func LaunchesViewControllerFromPostSotyboard() -> LaunchesViewController {
