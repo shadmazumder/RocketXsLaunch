@@ -6,7 +6,7 @@ project 'RocketXsLaunch/RocketXsLaunch'
 target 'RocketXsLaunch' do
   platform :osx, '11.3'
   
-  pod 'Alamofire', '~> 5.5'
+  pod 'Alamofire'
   
   target 'RocketXsLaunchTests'
 end
@@ -14,9 +14,9 @@ end
 target 'RocketXsLaunchiOS' do
   platform :ios, '15.0'
   
-  pod 'RxSwift', '~> 6.2.0'
-  pod 'RxCocoa', '~> 6.2.0'
-  pod 'Kingfisher', '~> 7.0'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Kingfisher'
   
   target 'RocketXsLaunchiOSTests'
 end
