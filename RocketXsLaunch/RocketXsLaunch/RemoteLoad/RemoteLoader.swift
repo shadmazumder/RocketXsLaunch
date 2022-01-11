@@ -7,8 +7,9 @@
 
 import Foundation
 
-public final class RemoteLoader<T: Decodable>{
-    public typealias Result = Swift.Result<T, Error>
+public final class RemoteLoader<T: Decodable>: Loader{
+    public typealias APIModel = T
+    public typealias LoaderError = Error
     
     public enum Error: Swift.Error {
         case connectivity
@@ -25,7 +26,7 @@ public final class RemoteLoader<T: Decodable>{
         self.client = client
     }
     
-    public func load(completion: @escaping ((Result) -> Void)) {
+    public func load(completion: @escaping ((Result<APIModel, LoaderError>) -> Void)) {
         client.get(from: url) {[weak self] result in
             switch result {
             case let .success((data, response)):
@@ -36,7 +37,7 @@ public final class RemoteLoader<T: Decodable>{
         }
     }
     
-    private func mapSuccessFrom(_ response: HTTPURLResponse, _ data: Data, _ completion: @escaping ((Result) -> Void)) {
+    private func mapSuccessFrom(_ response: HTTPURLResponse, _ data: Data, _ completion: @escaping ((Result<APIModel, LoaderError>) -> Void)) {
         if response.statusCode == 200 {
             mapResultFrom(data, completion: completion)
         }else {
@@ -44,7 +45,7 @@ public final class RemoteLoader<T: Decodable>{
         }
     }
     
-    private func mapResultFrom(_ data: Data, completion: @escaping ((Result) -> Void)) {
+    private func mapResultFrom(_ data: Data, completion: @escaping ((Result<APIModel, LoaderError>) -> Void)) {
         do {
             let jsonDecoder = JSONDecoder()
             jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -55,7 +56,7 @@ public final class RemoteLoader<T: Decodable>{
         }
     }
     
-    private func mapErrorFrom(_ decodingError: Swift.Error, _ completion: ((Result) -> Void)) {
+    private func mapErrorFrom(_ decodingError: Swift.Error, _ completion: ((Result<APIModel, LoaderError>) -> Void)) {
         if let decodingError = decodingError as? DecodingError {
             completion(.failure(.decoding(decodingError)))
         }else {
