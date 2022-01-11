@@ -21,8 +21,6 @@
 		A18ACE732789B5600004A3FE /* RocketXsLaunch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18ACE6A2789B55F0004A3FE /* RocketXsLaunch.framework */; };
 		A18ACE842789BEFA0004A3FE /* LaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACE832789BEFA0004A3FE /* LaunchTests.swift */; };
 		A18ACE872789FFE40004A3FE /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACE862789FFE40004A3FE /* Launch.swift */; };
-		A1ACE803278D2ADA0027BD9A /* RocketXsLaunchiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ACE7FB278D2ADA0027BD9A /* RocketXsLaunchiOS.framework */; };
-		A1ACE808278D2ADA0027BD9A /* RocketXsLaunchiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ACE807278D2ADA0027BD9A /* RocketXsLaunchiOSTests.swift */; };
 		B7744E5273AB8B50E8530AFE /* Pods_RocketXsLaunch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DDA12E89998D11812C2AE8 /* Pods_RocketXsLaunch.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,13 +31,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = A18ACE692789B55F0004A3FE;
 			remoteInfo = RocketXsLaunch;
-		};
-		A1ACE804278D2ADA0027BD9A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A18ACE612789B55F0004A3FE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A1ACE7FA278D2ADA0027BD9A;
-			remoteInfo = RocketXsLaunchiOS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -62,9 +53,6 @@
 		A18ACE722789B5600004A3FE /* RocketXsLaunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketXsLaunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18ACE832789BEFA0004A3FE /* LaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTests.swift; sourceTree = "<group>"; };
 		A18ACE862789FFE40004A3FE /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
-		A1ACE7FB278D2ADA0027BD9A /* RocketXsLaunchiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RocketXsLaunchiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1ACE802278D2ADA0027BD9A /* RocketXsLaunchiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketXsLaunchiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1ACE807278D2ADA0027BD9A /* RocketXsLaunchiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketXsLaunchiOSTests.swift; sourceTree = "<group>"; };
 		B5DDA12E89998D11812C2AE8 /* Pods_RocketXsLaunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RocketXsLaunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD4021C158D04306BBB48AA1 /* Pods-RocketXsLaunch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketXsLaunch.release.xcconfig"; path = "Target Support Files/Pods-RocketXsLaunch/Pods-RocketXsLaunch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,21 +72,6 @@
 			files = (
 				A18ACE732789B5600004A3FE /* RocketXsLaunch.framework in Frameworks */,
 				7ECCE2D15FE7D33AA4289E86 /* Pods_RocketXsLaunch_RocketXsLaunchTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A1ACE7F8278D2ADA0027BD9A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A1ACE7FF278D2ADA0027BD9A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A1ACE803278D2ADA0027BD9A /* RocketXsLaunchiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,8 +131,6 @@
 			children = (
 				A18ACE6C2789B55F0004A3FE /* RocketXsLaunch */,
 				A18ACE762789B5600004A3FE /* RocketXsLaunchTests */,
-				A1ACE7FC278D2ADA0027BD9A /* RocketXsLaunchiOS */,
-				A1ACE806278D2ADA0027BD9A /* RocketXsLaunchiOSTests */,
 				A18ACE6B2789B55F0004A3FE /* Products */,
 				6CA5C7AC2C76E1665BFE7624 /* Pods */,
 				69419A22DE4911EABD228E1E /* Frameworks */,
@@ -171,8 +142,6 @@
 			children = (
 				A18ACE6A2789B55F0004A3FE /* RocketXsLaunch.framework */,
 				A18ACE722789B5600004A3FE /* RocketXsLaunchTests.xctest */,
-				A1ACE7FB278D2ADA0027BD9A /* RocketXsLaunchiOS.framework */,
-				A1ACE802278D2ADA0027BD9A /* RocketXsLaunchiOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,32 +184,10 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
-		A1ACE7FC278D2ADA0027BD9A /* RocketXsLaunchiOS */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RocketXsLaunchiOS;
-			sourceTree = "<group>";
-		};
-		A1ACE806278D2ADA0027BD9A /* RocketXsLaunchiOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				A1ACE807278D2ADA0027BD9A /* RocketXsLaunchiOSTests.swift */,
-			);
-			path = RocketXsLaunchiOSTests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
 		A18ACE652789B55F0004A3FE /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A1ACE7F6278D2ADA0027BD9A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -289,42 +236,6 @@
 			productReference = A18ACE722789B5600004A3FE /* RocketXsLaunchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A1ACE7FA278D2ADA0027BD9A /* RocketXsLaunchiOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A1ACE80E278D2ADB0027BD9A /* Build configuration list for PBXNativeTarget "RocketXsLaunchiOS" */;
-			buildPhases = (
-				A1ACE7F6278D2ADA0027BD9A /* Headers */,
-				A1ACE7F7278D2ADA0027BD9A /* Sources */,
-				A1ACE7F8278D2ADA0027BD9A /* Frameworks */,
-				A1ACE7F9278D2ADA0027BD9A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RocketXsLaunchiOS;
-			productName = RocketXsLaunchiOS;
-			productReference = A1ACE7FB278D2ADA0027BD9A /* RocketXsLaunchiOS.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A1ACE801278D2ADA0027BD9A /* RocketXsLaunchiOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A1ACE80F278D2ADB0027BD9A /* Build configuration list for PBXNativeTarget "RocketXsLaunchiOSTests" */;
-			buildPhases = (
-				A1ACE7FE278D2ADA0027BD9A /* Sources */,
-				A1ACE7FF278D2ADA0027BD9A /* Frameworks */,
-				A1ACE800278D2ADA0027BD9A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A1ACE805278D2ADA0027BD9A /* PBXTargetDependency */,
-			);
-			name = RocketXsLaunchiOSTests;
-			productName = RocketXsLaunchiOSTests;
-			productReference = A1ACE802278D2ADA0027BD9A /* RocketXsLaunchiOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -343,12 +254,6 @@
 						CreatedOnToolsVersion = 13.0;
 						LastSwiftMigration = 1300;
 					};
-					A1ACE7FA278D2ADA0027BD9A = {
-						CreatedOnToolsVersion = 13.0;
-					};
-					A1ACE801278D2ADA0027BD9A = {
-						CreatedOnToolsVersion = 13.0;
-					};
 				};
 			};
 			buildConfigurationList = A18ACE642789B55F0004A3FE /* Build configuration list for PBXProject "RocketXsLaunch" */;
@@ -366,8 +271,6 @@
 			targets = (
 				A18ACE692789B55F0004A3FE /* RocketXsLaunch */,
 				A18ACE712789B5600004A3FE /* RocketXsLaunchTests */,
-				A1ACE7FA278D2ADA0027BD9A /* RocketXsLaunchiOS */,
-				A1ACE801278D2ADA0027BD9A /* RocketXsLaunchiOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -381,20 +284,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A18ACE702789B5600004A3FE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A1ACE7F9278D2ADA0027BD9A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A1ACE800278D2ADA0027BD9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -494,21 +383,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A1ACE7F7278D2ADA0027BD9A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A1ACE7FE278D2ADA0027BD9A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A1ACE808278D2ADA0027BD9A /* RocketXsLaunchiOSTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -516,11 +390,6 @@
 			isa = PBXTargetDependency;
 			target = A18ACE692789B55F0004A3FE /* RocketXsLaunch */;
 			targetProxy = A18ACE742789B5600004A3FE /* PBXContainerItemProxy */;
-		};
-		A1ACE805278D2ADA0027BD9A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A1ACE7FA278D2ADA0027BD9A /* RocketXsLaunchiOS */;
-			targetProxy = A1ACE804278D2ADA0027BD9A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -752,130 +621,6 @@
 			};
 			name = Release;
 		};
-		A1ACE80A278D2ADB0027BD9A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = shadmazumder.RocketXsLaunchiOS;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A1ACE80B278D2ADB0027BD9A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = shadmazumder.RocketXsLaunchiOS;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		A1ACE80C278D2ADB0027BD9A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = shadmazumder.RocketXsLaunchiOSTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A1ACE80D278D2ADB0027BD9A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = shadmazumder.RocketXsLaunchiOSTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -902,24 +647,6 @@
 			buildConfigurations = (
 				A18ACE802789B5600004A3FE /* Debug */,
 				A18ACE812789B5600004A3FE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A1ACE80E278D2ADB0027BD9A /* Build configuration list for PBXNativeTarget "RocketXsLaunchiOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A1ACE80A278D2ADB0027BD9A /* Debug */,
-				A1ACE80B278D2ADB0027BD9A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A1ACE80F278D2ADB0027BD9A /* Build configuration list for PBXNativeTarget "RocketXsLaunchiOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A1ACE80C278D2ADB0027BD9A /* Debug */,
-				A1ACE80D278D2ADB0027BD9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
