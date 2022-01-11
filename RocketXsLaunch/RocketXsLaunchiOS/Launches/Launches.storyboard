@@ -16,24 +16,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qW4-tM-X5S">
-                                <rect key="frame" x="107" y="327" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qW4-tM-X5S">
+                                <rect key="frame" x="20" y="44" width="374" height="779"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="eZr-K0-oCk">
-                                        <rect key="frame" x="0.0" y="49.5" width="240" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eZr-K0-oCk" id="S47-91-ZfD">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DLR-KY-WSV">
+                                <rect key="frame" x="20" y="831" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Successfull"/>
+                                    <segment title="2020"/>
+                                    <segment title="2021"/>
+                                    <segment title="All"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qW4-tM-X5S" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="2aD-YL-AZq"/>
+                            <constraint firstItem="DLR-KY-WSV" firstAttribute="top" secondItem="qW4-tM-X5S" secondAttribute="bottom" constant="8" symbolic="YES" id="2or-PH-cC9"/>
+                            <constraint firstItem="qW4-tM-X5S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Nbb-Yz-zUk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="DLR-KY-WSV" secondAttribute="bottom" id="ONw-KX-X9l"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qW4-tM-X5S" secondAttribute="trailing" constant="20" id="RJE-SK-xSa"/>
+                            <constraint firstItem="DLR-KY-WSV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="S2A-wR-Ij5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DLR-KY-WSV" secondAttribute="trailing" constant="20" id="rps-Z5-u8P"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="qW4-tM-X5S" id="YOI-NK-LUt"/>
@@ -41,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="94"/>
+            <point key="canvasLocation" x="-39.130434782608695" y="48.883928571428569"/>
         </scene>
     </scenes>
     <resources>
