@@ -13,6 +13,7 @@ target 'RocketXsLaunchiOS' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Kingfisher'
+  pod 'Alamofire'
   
   target 'RocketXsLaunchiOSTests'
 end

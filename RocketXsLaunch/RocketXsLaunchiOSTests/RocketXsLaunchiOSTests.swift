@@ -7,4 +7,8 @@
 
 import XCTest
 
-class RocketXsLaunchiOSTests: XCTestCase {}
+class RocketXsLaunchiOSTests: XCTestCase {
+    func test() {
+        XCTAssertTrue(true)
+    }
+}
