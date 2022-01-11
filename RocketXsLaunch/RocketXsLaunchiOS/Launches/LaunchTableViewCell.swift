@@ -10,7 +10,7 @@ import UIKit
 class LaunchTableViewCell: UITableViewCell {
     static let ReuseableIdentifier = "LaunchTableViewCell"
 
-    @IBOutlet weak var details: NSLayoutConstraint!
+    @IBOutlet weak var launchDetails: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var launchNumber: UILabel!
     @IBOutlet weak var name: UILabel!

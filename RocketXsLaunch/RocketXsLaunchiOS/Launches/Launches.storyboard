@@ -90,7 +90,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="date" destination="PBp-0p-y4p" id="UUd-81-lUq"/>
-                                            <outlet property="details" destination="smn-lY-h7i" id="Z4D-hF-pR4"/>
+                                            <outlet property="launchDetails" destination="CnH-8k-FXq" id="cT7-gx-ZaZ"/>
                                             <outlet property="launchNumber" destination="ixp-4U-aP2" id="9RC-Dz-vXy"/>
                                             <outlet property="name" destination="D1K-hE-Cg6" id="Z4h-yg-nWa"/>
                                             <outlet property="patchImageView" destination="12i-fR-6GI" id="byH-Ve-O1M"/>

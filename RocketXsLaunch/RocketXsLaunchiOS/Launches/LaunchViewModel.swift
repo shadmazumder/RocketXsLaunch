@@ -37,6 +37,14 @@ extension LaunchViewModel{
         guard let success = success else { return upcoming }
         return success || upcoming
     }
+    
+    var dateString: String? {
+        guard let date = date else { return nil }
+        
+        let dt = DateFormatter()
+        dt.dateFormat = "MMM d, yyyy"
+        return dt.string(from: date)
+    }
 }
 
 extension Array where Element == LaunchViewModel{
@@ -47,6 +55,12 @@ extension Array where Element == LaunchViewModel{
     func filterByYear(_ year: DateComponents) -> [LaunchViewModel] {
         let validModels = filter({ $0.date != nil }).nonFailure()
         return validModels.filter({ Calendar.current.dateComponents([.year], from: $0.date!) == year })
+    }
+}
+
+extension Array where Element == LaunchAPIModel{
+    func toViewModel() -> [LaunchViewModel]{
+        map({ LaunchViewModel($0) })
     }
 }
 
