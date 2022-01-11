@@ -28,6 +28,8 @@
 		A18E83B2278D8B5300D8CDE5 /* Pods_RocketXsLaunchiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A18E83B0278D8B5300D8CDE5 /* Pods_RocketXsLaunchiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A1ACE803278D2ADA0027BD9A /* RocketXsLaunchiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ACE7FB278D2ADA0027BD9A /* RocketXsLaunchiOS.framework */; };
 		A1ACE808278D2ADA0027BD9A /* RocketXsLaunchiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ACE807278D2ADA0027BD9A /* RocketXsLaunchiOSTests.swift */; };
+		A1CA9296278DE1DD005A9570 /* Launches.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1CA9295278DE1DD005A9570 /* Launches.storyboard */; };
+		A1CA9298278DE206005A9570 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA9297278DE206005A9570 /* LaunchesViewController.swift */; };
 		A5AC934396EDB87E152B9077 /* Pods_RocketXsLaunch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DDA12E89998D11812C2AE8 /* Pods_RocketXsLaunch.framework */; };
 		FAEF96E9506B5150C1C2EC4D /* Pods_RocketXsLaunchiOS_RocketXsLaunchiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18E83AC278D8B3500D8CDE5 /* Pods_RocketXsLaunchiOS_RocketXsLaunchiOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +104,8 @@
 		A1ACE7FB278D2ADA0027BD9A /* RocketXsLaunchiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RocketXsLaunchiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1ACE802278D2ADA0027BD9A /* RocketXsLaunchiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketXsLaunchiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1ACE807278D2ADA0027BD9A /* RocketXsLaunchiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketXsLaunchiOSTests.swift; sourceTree = "<group>"; };
+		A1CA9295278DE1DD005A9570 /* Launches.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launches.storyboard; sourceTree = "<group>"; };
+		A1CA9297278DE206005A9570 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
 		B5DDA12E89998D11812C2AE8 /* Pods_RocketXsLaunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RocketXsLaunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -267,6 +271,7 @@
 		A1ACE7FC278D2ADA0027BD9A /* RocketXsLaunchiOS */ = {
 			isa = PBXGroup;
 			children = (
+				A1CA9294278DE1D2005A9570 /* Launches */,
 			);
 			path = RocketXsLaunchiOS;
 			sourceTree = "<group>";
@@ -277,6 +282,15 @@
 				A1ACE807278D2ADA0027BD9A /* RocketXsLaunchiOSTests.swift */,
 			);
 			path = RocketXsLaunchiOSTests;
+			sourceTree = "<group>";
+		};
+		A1CA9294278DE1D2005A9570 /* Launches */ = {
+			isa = PBXGroup;
+			children = (
+				A1CA9295278DE1DD005A9570 /* Launches.storyboard */,
+				A1CA9297278DE206005A9570 /* LaunchesViewController.swift */,
+			);
+			path = Launches;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +413,7 @@
 					};
 					A1ACE7FA278D2ADA0027BD9A = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 					};
 					A1ACE801278D2ADA0027BD9A = {
 						CreatedOnToolsVersion = 13.0;
@@ -445,6 +460,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1CA9296278DE1DD005A9570 /* Launches.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +629,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1CA9298278DE206005A9570 /* LaunchesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -887,6 +904,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 346EF52D7ED92E59399F5B58 /* Pods-RocketXsLaunchiOS.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
@@ -914,6 +932,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -923,6 +942,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4F18538059C42DD7364D6EF5 /* Pods-RocketXsLaunchiOS.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
@@ -960,6 +980,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 140F8BA78564256E3DDA4C37 /* Pods-RocketXsLaunchiOS-RocketXsLaunchiOSTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -987,6 +1008,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 472F9E88019A4F6513D37706 /* Pods-RocketXsLaunchiOS-RocketXsLaunchiOSTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
