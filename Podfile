@@ -1,16 +1,9 @@
 workspace 'RocketXsLaunchSpace'
-project 'RocketXsLaunch/RocketXsLaunch'
 platform :ios, '15.0'
 use_frameworks!
 
 def shared_pods
   pod 'Alamofire'
-end
-
-target 'RocketXsLaunch' do
-  shared_pods
-  
-  target 'RocketXsLaunchTests'
 end
 
 def ios_pods
@@ -19,9 +12,24 @@ def ios_pods
   pod 'Kingfisher'
 end
 
+project 'RocketXsLaunch/RocketXsLaunch'
+
+target 'RocketXsLaunch' do
+  project 'RocketXsLaunch/RocketXsLaunch'
+  shared_pods
+  target 'RocketXsLaunchTests'
+end
+
 target 'RocketXsLaunchiOS' do
+  project 'RocketXsLaunch/RocketXsLaunch'
   shared_pods
   ios_pods
-  
   target 'RocketXsLaunchiOSTests'
+end
+
+project 'RocketXsLaunchApp/RocketXsLaunchApp'
+target 'RocketXsLaunchApp' do
+  project 'RocketXsLaunchApp/RocketXsLaunchApp'
+  shared_pods
+  ios_pods
 end

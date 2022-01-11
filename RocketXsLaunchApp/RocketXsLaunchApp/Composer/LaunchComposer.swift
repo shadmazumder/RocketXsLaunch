@@ -17,7 +17,7 @@ final class LaunchComposer {
     }
 
     private static func makeLaunchesViewCotroller() -> LaunchesViewController {
-        let bundle = Bundle(for: LaunchComposer.self)
+        let bundle = Bundle(for: LaunchesViewController.self)
         let storyboard = UIStoryboard(name: "Launches", bundle: bundle)
 
         guard let launchesViewController = storyboard.instantiateInitialViewController() as? LaunchesViewController else {

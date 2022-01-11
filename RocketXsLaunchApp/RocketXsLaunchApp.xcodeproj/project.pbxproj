@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C707B392A64E55B86A0E5F8 /* Pods_RocketXsLaunchApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1116D17492DB180BB01D5D95 /* Pods_RocketXsLaunchApp.framework */; };
 		A18ACDE22789A5DA0004A3FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACDE12789A5DA0004A3FE /* AppDelegate.swift */; };
 		A18ACDE42789A5DA0004A3FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACDE32789A5DA0004A3FE /* SceneDelegate.swift */; };
 		A18ACDEB2789A5DC0004A3FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18ACDEA2789A5DC0004A3FE /* Assets.xcassets */; };
@@ -58,6 +59,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1116D17492DB180BB01D5D95 /* Pods_RocketXsLaunchApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RocketXsLaunchApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		421F046F531DA28FFD1A30F0 /* Pods-RocketXsLaunchApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketXsLaunchApp.release.xcconfig"; path = "Target Support Files/Pods-RocketXsLaunchApp/Pods-RocketXsLaunchApp.release.xcconfig"; sourceTree = "<group>"; };
 		A18ACDDE2789A5DA0004A3FE /* RocketXsLaunchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketXsLaunchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18ACDE12789A5DA0004A3FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A18ACDE32789A5DA0004A3FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 		A1CA92B9278E0E5C005A9570 /* LaunchComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchComposer.swift; sourceTree = "<group>"; };
 		A1CA92CB278E1710005A9570 /* RocketXsLaunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RocketXsLaunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1CA92CC278E1710005A9570 /* RocketXsLaunchiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RocketXsLaunchiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFA8814A18CC81322F826A80 /* Pods-RocketXsLaunchApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketXsLaunchApp.debug.xcconfig"; path = "Target Support Files/Pods-RocketXsLaunchApp/Pods-RocketXsLaunchApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 			files = (
 				A1CA92CF278E1710005A9570 /* RocketXsLaunchiOS.framework in Frameworks */,
 				A1CA92CD278E1710005A9570 /* RocketXsLaunch.framework in Frameworks */,
+				9C707B392A64E55B86A0E5F8 /* Pods_RocketXsLaunchApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +110,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		065118CF9810EB25C9034BBF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFA8814A18CC81322F826A80 /* Pods-RocketXsLaunchApp.debug.xcconfig */,
+				421F046F531DA28FFD1A30F0 /* Pods-RocketXsLaunchApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
 		A18ACDD52789A5DA0004A3FE = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +128,7 @@
 				A18ACE012789A5DD0004A3FE /* RocketXsLaunchAppUITests */,
 				A18ACDDF2789A5DA0004A3FE /* Products */,
 				A1CA92CA278E1710005A9570 /* Frameworks */,
+				065118CF9810EB25C9034BBF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +197,7 @@
 			children = (
 				A1CA92CB278E1710005A9570 /* RocketXsLaunch.framework */,
 				A1CA92CC278E1710005A9570 /* RocketXsLaunchiOS.framework */,
+				1116D17492DB180BB01D5D95 /* Pods_RocketXsLaunchApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -192,10 +209,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A18ACE082789A5DD0004A3FE /* Build configuration list for PBXNativeTarget "RocketXsLaunchApp" */;
 			buildPhases = (
+				D321F095E4CF5080DE8B3737 /* [CP] Check Pods Manifest.lock */,
 				A18ACDDA2789A5DA0004A3FE /* Sources */,
 				A18ACDDB2789A5DA0004A3FE /* Frameworks */,
 				A18ACDDC2789A5DA0004A3FE /* Resources */,
 				A1CA92D1278E1710005A9570 /* Embed Frameworks */,
+				9BD038E14019D982BD4A1B19 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,6 +330,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9BD038E14019D982BD4A1B19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RocketXsLaunchApp/Pods-RocketXsLaunchApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RocketXsLaunchApp/Pods-RocketXsLaunchApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RocketXsLaunchApp/Pods-RocketXsLaunchApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D321F095E4CF5080DE8B3737 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RocketXsLaunchApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A18ACDDA2789A5DA0004A3FE /* Sources */ = {
@@ -489,6 +550,7 @@
 		};
 		A18ACE092789A5DD0004A3FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFA8814A18CC81322F826A80 /* Pods-RocketXsLaunchApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -515,6 +577,7 @@
 		};
 		A18ACE0A2789A5DD0004A3FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 421F046F531DA28FFD1A30F0 /* Pods-RocketXsLaunchApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
