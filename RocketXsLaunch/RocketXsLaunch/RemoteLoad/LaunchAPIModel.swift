@@ -10,14 +10,17 @@ import Foundation
 public struct LaunchAPIModel {
     public let name: String
     public let id: String
-    public let details: String
+    public let details: String?
     public let dateString: String
-    public let links: Links
+    public let links: Links?
     public let rocketId: String
     public let success: Bool?
     public let upcoming: Bool
     
-    public var imageUrl: URL?{ URL(string: links.patch.small) }
+    public var imageUrl: URL?{
+        guard let urlString = links?.patch?.small, let url = URL(string: urlString) else { return nil }
+        return url
+    }
     public var date: Date? { ISO8601DateFormatter().date(from: dateString) }
     
     public init(name: String, id: String, details: String, dateString: String, links: Links, rocketId: String, success: Bool?, upcoming: Bool){
@@ -46,7 +49,7 @@ extension LaunchAPIModel: Decodable{
 }
 
 public struct Patch: Decodable{
-    public let small: String
+    public let small: String?
     
     public init(small: String){
         self.small = small
@@ -54,7 +57,7 @@ public struct Patch: Decodable{
 }
 
 public struct Links: Decodable{
-    public let patch: Patch
+    public let patch: Patch?
     
     public init(patch: Patch) {
         self.patch = patch

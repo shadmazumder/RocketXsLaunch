@@ -58,7 +58,7 @@ class LaunchMapperTests: XCTestCase {
             },
             "links": {
                 "patch": {
-                    "small": "\(launchApiModel.links.patch.small)",
+                    "small": "\((launchApiModel.links?.patch?.small)!)",
                     "large": "https://images2.imgbox.com/40/e3/GypSkayF_o.png"
                 },
                 "reddit": {
@@ -88,7 +88,7 @@ class LaunchMapperTests: XCTestCase {
                 "altitude": null,
                 "reason": "merlin engine failure"
             }],
-            "details": "\(launchApiModel.details)",
+            "details": "\(launchApiModel.details!)",
             "crew": [],
             "ships": [],
             "capsules": [],

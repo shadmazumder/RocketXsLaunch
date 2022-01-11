@@ -18,7 +18,7 @@ public struct LaunchAPIModelMapper {
     public let success: Bool?
     public let upcoming: Bool
     
-    public var imageUrl: URL?{ URL(string: links.patch.small) }
+    public var imageUrl: URL?{ URL(string: (links.patch?.small!)!) }
     public var date: Date? { ISO8601DateFormatter().date(from: dateString) }
 }
 
@@ -54,9 +54,9 @@ extension LaunchAPIModel{
     var mapper: LaunchAPIModelMapper{
         LaunchAPIModelMapper(name: name,
                              id: id,
-                             details: details,
+                             details: details!,
                              dateString: dateString,
-                             links: links,
+                             links: links!,
                              rocketId: rocketId,
                              success: success,
                              upcoming: upcoming)
