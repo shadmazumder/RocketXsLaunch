@@ -1,10 +1,22 @@
-project 'RocketXsLaunch'
 workspace '../RocketXsLaunchSpace'
-
-platform :osx, '11.3'
 use_frameworks!
 
+project 'RocketXsLaunch'
+
 target 'RocketXsLaunch' do
+  platform :osx, '11.3'
+  
   pod 'Alamofire', '~> 5.5'
+  
   target 'RocketXsLaunchTests'
+end
+
+target 'RocketXsLaunchiOS' do
+  platform :ios, '15.0'
+  
+  pod 'RxSwift', '~> 6.2.0'
+  pod 'RxCocoa', '~> 6.2.0'
+  pod 'Kingfisher', '~> 7.0'
+  
+  target 'RocketXsLaunchiOSTests'
 end
