@@ -20,6 +20,7 @@ public final class LaunchesViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
         fetchLaunches()
     }
     
@@ -44,7 +45,8 @@ public final class LaunchesViewController: UIViewController {
         remoteLoader?.load(completion: { [weak self] result in
             switch result {
             case let .success(apiModel):
-                self?.launchs.accept(apiModel.toViewModel())
+                let viewModel = apiModel.toViewModel()
+                self?.launchs.accept(viewModel)
             default:
                 break
             }

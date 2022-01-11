@@ -71,8 +71,8 @@
                                                         <constraint firstItem="D1K-hE-Cg6" firstAttribute="top" secondItem="sN8-xb-VLJ" secondAttribute="top" id="zRs-Wb-OOb"/>
                                                     </constraints>
                                                 </stackView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="12i-fR-6GI">
-                                                    <rect key="frame" x="20" y="11" width="80" height="80"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lasso.and.sparkles" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="12i-fR-6GI">
+                                                    <rect key="frame" x="19" y="8" width="81" height="83.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="MYZ-Ah-EIk"/>
                                                         <constraint firstAttribute="height" constant="80" id="hdL-g1-fif"/>
@@ -133,6 +133,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="lasso.and.sparkles" catalog="system" width="114" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
