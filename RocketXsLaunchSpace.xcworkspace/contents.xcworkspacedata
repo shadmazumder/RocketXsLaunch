@@ -8,6 +8,6 @@
       location = "group:RocketXsLaunchApp/RocketXsLaunchApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:RocketXsLaunch/Pods/Pods.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

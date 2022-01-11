@@ -1,7 +1,7 @@
-workspace '../RocketXsLaunchSpace'
+workspace 'RocketXsLaunchSpace'
 use_frameworks!
 
-project 'RocketXsLaunch'
+project 'RocketXsLaunch/RocketXsLaunch'
 
 target 'RocketXsLaunch' do
   platform :osx, '11.3'
