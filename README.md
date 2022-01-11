@@ -5,6 +5,13 @@ The first screen will contain all the successful SpaceX launches. Users can filt
 
 The second screen will provide the details of a selected rocket.
 
+**Installation**
+1. Clone the reporisitory.
+2. From the parent directory move to the _RocketXsLaunch_ directory, `cd RocketXsLaunch`
+3. `pod install`
+
+Running the test under `RocketXsLaunchiOSTests` might require to select a development team under `Signing & Capabilities`.
+
 **Used API**
 1. [Launch list](https://api.spacexdata.com/v4/launches)
 2. [Rocket details](https://api.spacexdata.com/v4/rockets/:id)
