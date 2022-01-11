@@ -14,6 +14,15 @@
 		A18ACDF92789A5DD0004A3FE /* RocketXsLaunchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACDF82789A5DD0004A3FE /* RocketXsLaunchAppTests.swift */; };
 		A18ACE032789A5DD0004A3FE /* RocketXsLaunchAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACE022789A5DD0004A3FE /* RocketXsLaunchAppUITests.swift */; };
 		A18ACE052789A5DD0004A3FE /* RocketXsLaunchAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ACE042789A5DD0004A3FE /* RocketXsLaunchAppUITestsLaunchTests.swift */; };
+		A1CA92BF278E0E5C005A9570 /* Loagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA92AE278E0E5C005A9570 /* Loagger.swift */; };
+		A1CA92C3278E0E5C005A9570 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA92B5278E0E5C005A9570 /* Router.swift */; };
+		A1CA92C4278E0E5C005A9570 /* RocketDetailsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA92B6278E0E5C005A9570 /* RocketDetailsComposer.swift */; };
+		A1CA92C5278E0E5C005A9570 /* RootComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA92B7278E0E5C005A9570 /* RootComposer.swift */; };
+		A1CA92C6278E0E5C005A9570 /* LaunchComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA92B9278E0E5C005A9570 /* LaunchComposer.swift */; };
+		A1CA92CD278E1710005A9570 /* RocketXsLaunch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CA92CB278E1710005A9570 /* RocketXsLaunch.framework */; };
+		A1CA92CE278E1710005A9570 /* RocketXsLaunch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A1CA92CB278E1710005A9570 /* RocketXsLaunch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A1CA92CF278E1710005A9570 /* RocketXsLaunchiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CA92CC278E1710005A9570 /* RocketXsLaunchiOS.framework */; };
+		A1CA92D0278E1710005A9570 /* RocketXsLaunchiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A1CA92CC278E1710005A9570 /* RocketXsLaunchiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +42,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A1CA92D1278E1710005A9570 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A1CA92D0278E1710005A9570 /* RocketXsLaunchiOS.framework in Embed Frameworks */,
+				A1CA92CE278E1710005A9570 /* RocketXsLaunch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A18ACDDE2789A5DA0004A3FE /* RocketXsLaunchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketXsLaunchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18ACDE12789A5DA0004A3FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +69,13 @@
 		A18ACDFE2789A5DD0004A3FE /* RocketXsLaunchAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketXsLaunchAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18ACE022789A5DD0004A3FE /* RocketXsLaunchAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketXsLaunchAppUITests.swift; sourceTree = "<group>"; };
 		A18ACE042789A5DD0004A3FE /* RocketXsLaunchAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketXsLaunchAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A1CA92AE278E0E5C005A9570 /* Loagger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loagger.swift; sourceTree = "<group>"; };
+		A1CA92B5278E0E5C005A9570 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		A1CA92B6278E0E5C005A9570 /* RocketDetailsComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketDetailsComposer.swift; sourceTree = "<group>"; };
+		A1CA92B7278E0E5C005A9570 /* RootComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootComposer.swift; sourceTree = "<group>"; };
+		A1CA92B9278E0E5C005A9570 /* LaunchComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchComposer.swift; sourceTree = "<group>"; };
+		A1CA92CB278E1710005A9570 /* RocketXsLaunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RocketXsLaunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1CA92CC278E1710005A9570 /* RocketXsLaunchiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RocketXsLaunchiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1CA92CF278E1710005A9570 /* RocketXsLaunchiOS.framework in Frameworks */,
+				A1CA92CD278E1710005A9570 /* RocketXsLaunch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +112,7 @@
 				A18ACDF72789A5DD0004A3FE /* RocketXsLaunchAppTests */,
 				A18ACE012789A5DD0004A3FE /* RocketXsLaunchAppUITests */,
 				A18ACDDF2789A5DA0004A3FE /* Products */,
+				A1CA92CA278E1710005A9570 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +129,8 @@
 		A18ACDE02789A5DA0004A3FE /* RocketXsLaunchApp */ = {
 			isa = PBXGroup;
 			children = (
+				A1CA92AD278E0E5C005A9570 /* Common */,
+				A1CA92AF278E0E5C005A9570 /* Composer */,
 				A18ACDE12789A5DA0004A3FE /* AppDelegate.swift */,
 				A18ACDE32789A5DA0004A3FE /* SceneDelegate.swift */,
 				A18ACDEA2789A5DC0004A3FE /* Assets.xcassets */,
@@ -121,6 +157,34 @@
 			path = RocketXsLaunchAppUITests;
 			sourceTree = "<group>";
 		};
+		A1CA92AD278E0E5C005A9570 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A1CA92AE278E0E5C005A9570 /* Loagger.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A1CA92AF278E0E5C005A9570 /* Composer */ = {
+			isa = PBXGroup;
+			children = (
+				A1CA92B5278E0E5C005A9570 /* Router.swift */,
+				A1CA92B6278E0E5C005A9570 /* RocketDetailsComposer.swift */,
+				A1CA92B7278E0E5C005A9570 /* RootComposer.swift */,
+				A1CA92B9278E0E5C005A9570 /* LaunchComposer.swift */,
+			);
+			path = Composer;
+			sourceTree = "<group>";
+		};
+		A1CA92CA278E1710005A9570 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1CA92CB278E1710005A9570 /* RocketXsLaunch.framework */,
+				A1CA92CC278E1710005A9570 /* RocketXsLaunchiOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,6 +195,7 @@
 				A18ACDDA2789A5DA0004A3FE /* Sources */,
 				A18ACDDB2789A5DA0004A3FE /* Frameworks */,
 				A18ACDDC2789A5DA0004A3FE /* Resources */,
+				A1CA92D1278E1710005A9570 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,6 +272,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = A18ACDD52789A5DA0004A3FE;
 			productRefGroup = A18ACDDF2789A5DA0004A3FE /* Products */;
@@ -251,8 +317,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1CA92C4278E0E5C005A9570 /* RocketDetailsComposer.swift in Sources */,
+				A1CA92C5278E0E5C005A9570 /* RootComposer.swift in Sources */,
+				A1CA92C6278E0E5C005A9570 /* LaunchComposer.swift in Sources */,
+				A1CA92C3278E0E5C005A9570 /* Router.swift in Sources */,
 				A18ACDE22789A5DA0004A3FE /* AppDelegate.swift in Sources */,
 				A18ACDE42789A5DA0004A3FE /* SceneDelegate.swift in Sources */,
+				A1CA92BF278E0E5C005A9570 /* Loagger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
