@@ -23,6 +23,13 @@ class RocketXsLaunchiOSTests: XCTestCase {
         XCTAssertEqual(sut.title, headerText)
     }
     
+    func test_init_rendersNoItems() {
+        let sut = makeSUT()
+        sut.loadViewIfNeeded()
+
+        XCTAssertEqual(sut.cellCount, 0)
+    }
+        
     // MARK: - Helper
     private func makeSUT(_ headerText: String = "") -> LaunchesViewController{
         let sut = launchesViewControllerFromPostSotyboard() as! LaunchesViewController

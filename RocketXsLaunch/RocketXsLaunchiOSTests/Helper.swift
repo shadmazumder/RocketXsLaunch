@@ -16,3 +16,7 @@ extension XCTestCase {
         }
     }
 }
+
+extension LaunchesViewController{
+    var cellCount: Int{ tableView.numberOfRows(inSection: 0) }
+}

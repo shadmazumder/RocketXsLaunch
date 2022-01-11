@@ -9,6 +9,8 @@ import UIKit
 import RocketXsLaunch
 
 public final class LaunchesViewController: UIViewController {
+    @IBOutlet public weak var tableView: UITableView!
+
     public var remoteLoader: RemoteLoader<LaunchAPIModel>?
     
     public override func viewDidLoad() {
@@ -17,8 +19,11 @@ public final class LaunchesViewController: UIViewController {
     }
     
     private func fetchLaunches(){
-        remoteLoader?.load(completion: { _ in
+        tableView.refreshControl?.beginRefreshing()
+        
+        remoteLoader?.load(completion: { [weak self] _ in
             
+            self?.tableView.refreshControl?.endRefreshing()
         })
     }
 }
