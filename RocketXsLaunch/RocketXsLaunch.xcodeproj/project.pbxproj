@@ -33,6 +33,7 @@
 		A1CA929A278DE996005A9570 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA9299278DE996005A9570 /* Helper.swift */; };
 		A1CA929C278DFAD2005A9570 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA929B278DFAD2005A9570 /* Loader.swift */; };
 		A1CA929F278DFB9A005A9570 /* LoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA929E278DFB9A005A9570 /* LoaderSpy.swift */; };
+		A1CA92A1278DFEAE005A9570 /* LaunchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA92A0278DFEAE005A9570 /* LaunchTableViewCell.swift */; };
 		A5AC934396EDB87E152B9077 /* Pods_RocketXsLaunch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DDA12E89998D11812C2AE8 /* Pods_RocketXsLaunch.framework */; };
 		FAEF96E9506B5150C1C2EC4D /* Pods_RocketXsLaunchiOS_RocketXsLaunchiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18E83AC278D8B3500D8CDE5 /* Pods_RocketXsLaunchiOS_RocketXsLaunchiOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		A1CA9299278DE996005A9570 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		A1CA929B278DFAD2005A9570 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		A1CA929E278DFB9A005A9570 /* LoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderSpy.swift; sourceTree = "<group>"; };
+		A1CA92A0278DFEAE005A9570 /* LaunchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableViewCell.swift; sourceTree = "<group>"; };
 		B5DDA12E89998D11812C2AE8 /* Pods_RocketXsLaunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RocketXsLaunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -297,6 +299,7 @@
 			children = (
 				A1CA9295278DE1DD005A9570 /* Launches.storyboard */,
 				A1CA9297278DE206005A9570 /* LaunchesViewController.swift */,
+				A1CA92A0278DFEAE005A9570 /* LaunchTableViewCell.swift */,
 			);
 			path = Launches;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1CA92A1278DFEAE005A9570 /* LaunchTableViewCell.swift in Sources */,
 				A1CA9298278DE206005A9570 /* LaunchesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
