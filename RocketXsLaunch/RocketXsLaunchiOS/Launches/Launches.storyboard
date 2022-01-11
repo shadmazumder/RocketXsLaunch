@@ -106,6 +106,9 @@
                                     <segment title="2021"/>
                                     <segment title="All"/>
                                 </segments>
+                                <connections>
+                                    <action selector="filterBy:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Iuh-nO-rya"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>

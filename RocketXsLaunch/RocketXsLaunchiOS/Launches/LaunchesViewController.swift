@@ -26,4 +26,8 @@ public final class LaunchesViewController: UIViewController {
             self?.tableView.refreshControl?.endRefreshing()
         })
     }
+    
+    @IBAction func filterBy(_ sender: Any) {
+    }
+    
 }
