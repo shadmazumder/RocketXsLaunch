@@ -26,7 +26,7 @@ class RocketXsLaunchiOSTests: XCTestCase {
         return sut
     }
     
-    private func assertLoadingCount(_ extectedCount: Int){
+    private func assertLoadingCount(_ extectedCount: Int, action: (() -> ())? = nil){
         var counter = 0
         struct Client: HTTPClient{
             func get(from url: URL, completion: @escaping (HTTPResult) -> Void) {}
@@ -38,6 +38,7 @@ class RocketXsLaunchiOSTests: XCTestCase {
         }
         
         let _ = makeSUT(loader: loader)
+        action?()
         XCTAssertEqual(counter, extectedCount)
     }
     
